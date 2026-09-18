@@ -1,0 +1,19 @@
+RewriteEngine On
+
+# Redirecciona index.html a index.php (301)
+RewriteRule ^index\.html$ /index.php [R=301,L]
+
+# Forzar HTTPS y eliminar el www en una sola regla
+RewriteCond %{HTTP_HOST} !^localhost [NC]
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\.tiendatexasllc\.com [NC]
+RewriteRule ^(.*)$ https://tiendatexasllc.com/$1 [R=301,L]
+
+# Redirecciones de páginas viejas (en un solo salto, sin pasar por la regla de arriba)
+RewriteRule ^guia-rampas-perros-senior\.php$ /rampas.php [R=301,L]
+RewriteRule ^guia-rampas-perros-senior\.html$ /rampas.php [R=301,L]
+RewriteRule ^guia-camas-ortopedicas-perros-senior\.php$ /camas.php [R=301,L]
+RewriteRule ^guia-glucosamina-condroitina-perros-senior\.php$ /suplementos.php [R=301,L]
+RewriteRule ^glucosamina-condroitina\.php$ /suplementos.php [R=301,L]
+RewriteRule ^guia-arnes-soporte-trasero-perros-senior\.php$ /arnes.php [R=301,L]
+RewriteRule ^guia-alfombras-antideslizantes-perros-senior\.php$ /alfombras.php [R=301,L]
