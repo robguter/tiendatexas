@@ -1,0 +1,24 @@
+name: 🚀 Despliegue Automático Tienda Texas
+on:
+push:
+branches:- main
+jobs:
+deploy:
+
+name: 📤 Subir cambios al Hosting
+runs-on: ubuntu-latest
+steps:- 
+
+name: 🚚 Obtener código del repositorio
+uses: actions/checkout@v4
+
+name: 🔄 Sincronizar archivos por SFTP
+uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+
+with:
+server: ${{ secrets.SFTP_SERVER }}
+username: ${{ secrets.SFTP_USERNAME }}
+password: ${{ secrets.SFTP_PASSWORD }}
+port: 21098 # Ajustado al puerto de 5 dígitos de tu FileZilla
+local-dir: ./
+server-dir: ./public_html/ # Verifica si es public_html o la carpeta de "Viajmscet"
