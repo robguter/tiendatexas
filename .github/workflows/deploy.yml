@@ -21,4 +21,4 @@ jobs:
           server: ${{ secrets.SFTP_SERVER }}
           port: 21098          
           local_path: './*'
-          remote_path: '/public_html/'
+          remote_path: './public_html'
