@@ -3,7 +3,7 @@ name: Despliegue Automatico Tienda Texas
 on:
   push:
     branches:
-      - main
+      - main # Recuerda cambiarlo a master si tu rama local se llama así
 
 jobs:
   deploy:
