@@ -1,6 +1,6 @@
 <?php
     // contacto.php - Página de Soporte Funcional de Tienda Texas LLC
-    $meta_title = "Contacto y Soporte - Tienda Texas";
+    $meta_title = "Contacto y Soporte - Tienda Texas y prueba de GITHUB";
     $meta_description = "Formulario de contacto oficial de Tienda Texas LLC. Escríbenos para dudas, sugerencias o colaboraciones sobre el cuidado de perros senior.";
     $canonical = "https://tiendatexasllc.com/contacto.php";
 
