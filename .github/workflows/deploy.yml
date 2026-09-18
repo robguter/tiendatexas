@@ -19,6 +19,7 @@ jobs:
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
           server: ${{ secrets.SFTP_SERVER }}
-          port: 21098          
-          local_path: './*'
-          remote_path: './public_html'
+          port: 21098
+          local-dir: './'
+          server-dir: './public_html/'
+          
