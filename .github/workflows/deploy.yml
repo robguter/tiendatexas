@@ -3,7 +3,7 @@ name: Despliegue Automatico Tienda Texas
 on:
   push:
     branches:
-      - main # Recuerda cambiarlo a master si tu rama local se llama así
+      - main
 
 jobs:
   deploy:
@@ -19,6 +19,6 @@ jobs:
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
           server: ${{ secrets.SFTP_SERVER }}
-          port: 21098
+          port: 21098          
           local_path: './*'
-          remote_path: '/public_html'
+          remote_path: 'public_html'
