@@ -13,12 +13,12 @@ jobs:
       - name: Obtener codigo del repositorio
         uses: actions/checkout@v4
 
-      - name: Sincronizar archivos por SFTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Sincronizar archivos por SFTP Puro
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
+          username: ${{ secrets.SFTP_USERNAME }}
+          password: ${{ secrets.SFTP_PASSWORD }}
           server: ${{ secrets.SFTP_SERVER }}
-          username: \${{ secrets.SFTP_USERNAME }}
-          password: \${{ secrets.SFTP_PASSWORD }}
           port: 21098
-          local-dir: ./
-          server-dir: ./public_html/
+          local_path: './*'
+          remote_path: '/public_html'
