@@ -17,9 +17,8 @@ jobs:
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
           username: ${{ secrets.SFTP_USERNAME }}
-          password: ${{ secrets.SFTP_PASSWORD }}
           server: ${{ secrets.SFTP_SERVER }}
+          ssh_private_key: ${{ secrets.SFTP_SSH_KEY }}
           port: 21098
           local_path: './*'
           remote_path: 'public_html'
-          
