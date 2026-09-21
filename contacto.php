@@ -53,7 +53,7 @@
             
             <div style="display: flex; flex-direction: column; gap: 5px;">
                 <label style="font-weight: 600; font-size: 0.95rem;">Nombre Completo:</label>
-                <input type="text" name="nombre" required style="padding: 12px; border: 1px solid var(--gris-borde); border-radius: 6px; font-family: inherit;">
+                <input type="text" name="nombre" required>
             </div>
 
             <div style="display: flex; flex-direction: column; gap: 5px;">

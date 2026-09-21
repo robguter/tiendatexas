@@ -31,7 +31,7 @@
         </div>
 
         <div class="guide-banner">
-        <img src="publicos/images/camas/camas_p10.webp" alt="Perro descansando en cama para mascotas">
+        <img src="publicos/images/camas/camas_p1.webp" alt="Perro descansando en cama para mascotas">
         </div>
 
         <article>

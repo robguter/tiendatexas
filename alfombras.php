@@ -32,7 +32,7 @@
 </div>
 
 <div class="guide-banner">
-  <img src="publicos/images/alfombras/alfombras_p10.webp" alt="Perro sobre alfombra en casa">
+  <img src="publicos/images/alfombras/alfombras_p1.webp" alt="Perro sobre alfombra en casa">
 </div>
 
 <article>

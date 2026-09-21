@@ -58,43 +58,19 @@
 
           <div class="guide-card">
             <div class="guide-thumb">
-              <img src="publicos/images/rampas/rampas_p1.webp" alt="Guía de rampas">
+              <img src="publicos/images/inicio/alfombras_p1.webp" alt="Guía de alfombras">
             </div>
             <div class="body">
-              <span class="kicker">Movilidad Senior</span>
-              <h3>Las mejores rampas para perros mayores</h3>
-              <p>Comparamos la estabilidad, el peso máximo soportado y el ángulo de inclinación en modelos telescópicos y de espuma pura.</p>
-              <a href="rampas.php" class="readmore">Leer análisis detallado →</a>
+              <span class="kicker">Seguridad en casa</span>
+              <h3>Alfombras antideslizantes: guía práctica</h3>
+              <p>Dónde colocarlas y qué buscar para evitar resbalones en pisos duros.</p>
+              <a href="alfombras.php" class="readmore">Leer guía →</a>
             </div>
           </div>
 
           <div class="guide-card">
             <div class="guide-thumb">
-              <img src="publicos/images/camas/camas_p1.webp" alt="Guía de camas">
-            </div>
-            <div class="body">
-              <span class="kicker">Descanso Ergonómico</span>
-              <h3>Camas ortopédicas: cuáles valen la pena</h3>
-              <p>Qué densidad de espuma viscoelástica (Memory Foam) buscar según el peso y los signos de displasia de cadera.</p>
-              <a href="camas.php" class="readmore">Leer análisis detallado →</a>
-            </div>
-          </div>
-
-          <div class="guide-card">
-            <div class="guide-thumb">
-              <img src="publicos/images/suplementos/suplementos_p1.webp" alt="Guía de suplementos">
-            </div>
-            <div class="body">
-              <span class="kicker">Suplementos</span>
-              <h3>Glucosamina y condroitina: guía sin humo</h3>
-              <p>Qué dice la evidencia, y cómo elegir una marca confiable en Amazon.</p>
-              <a href="suplementos.php" class="readmore">Leer guía →</a>
-            </div>
-          </div>
-
-          <div class="guide-card">
-            <div class="guide-thumb">
-              <img src="publicos/images/arnes/arnes_p1.webp" alt="Guía de arneses">
+              <img src="publicos/images/inicio/arnes_p1.webp" alt="Guía de arneses">
             </div>
             <div class="body">
               <span class="kicker">Movilidad</span>
@@ -106,13 +82,37 @@
 
           <div class="guide-card">
             <div class="guide-thumb">
-              <img src="publicos/images/alfombras/alfombras_p1.webp" alt="Guía de alfombras">
+              <img src="publicos/images/inicio/camas_p1.webp" alt="Guía de camas">
             </div>
             <div class="body">
-              <span class="kicker">Seguridad en casa</span>
-              <h3>Alfombras antideslizantes: guía práctica</h3>
-              <p>Dónde colocarlas y qué buscar para evitar resbalones en pisos duros.</p>
-              <a href="alfombras.php" class="readmore">Leer guía →</a>
+              <span class="kicker">Descanso Ergonómico</span>
+              <h3>Camas ortopédicas: cuáles valen la pena</h3>
+              <p>Qué densidad de espuma viscoelástica (Memory Foam) buscar según el peso y los signos de displasia de cadera.</p>
+              <a href="camas.php" class="readmore">Leer análisis detallado →</a>
+            </div>
+          </div>
+
+          <div class="guide-card">
+            <div class="guide-thumb">
+              <img src="publicos/images/inicio/rampas_p1.webp" alt="Guía de rampas">
+            </div>
+            <div class="body">
+              <span class="kicker">Movilidad Senior</span>
+              <h3>Las mejores rampas para perros mayores</h3>
+              <p>Comparamos la estabilidad, el peso máximo soportado y el ángulo de inclinación en modelos telescópicos y de espuma pura.</p>
+              <a href="rampas.php" class="readmore">Leer análisis detallado →</a>
+            </div>
+          </div>
+
+          <div class="guide-card">
+            <div class="guide-thumb">
+              <img src="publicos/images/inicio/suplementos_p1.webp" alt="Guía de suplementos">
+            </div>
+            <div class="body">
+              <span class="kicker">Suplementos</span>
+              <h3>Glucosamina y condroitina: guía sin humo</h3>
+              <p>Qué dice la evidencia, y cómo elegir una marca confiable en Amazon.</p>
+              <a href="suplementos.php" class="readmore">Leer guía →</a>
             </div>
           </div>
           

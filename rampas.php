@@ -33,7 +33,7 @@
         </div>
 
         <div class="guide-banner">
-            <img src="publicos/images/rampas/rampas_p10.webp" alt="Perro senior en escalones">
+            <img src="publicos/images/rampas/rampas_p1.webp" alt="Perro senior en escalones">
         </div>
 
         <article>
