@@ -128,8 +128,7 @@
             Nos enfocamos solo en perros senior porque sus necesidades son distintas: movilidad reducida, articulaciones sensibles, cambios de apetito. Cada recomendación parte de eso, no de "los 10 productos más vendidos para perros" sin contexto.
           </p>
           <div class="stat-row">
-            <div class="stat"><b>7+</b><span>años de experiencia con perros senior</span></div>
-            <div class="stat"><b>30+</b><span>productos probados y comparados</span></div>
+            <div class="stat"><span>Como dueños de perros senior, entendemos de primera mano los cambios que trae la edad, productos probados y comparados</span></div>
           </div>
         </div>
         <div class="timeline-card" style="background:#fff; padding:0; overflow:hidden;">
