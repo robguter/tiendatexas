@@ -148,6 +148,18 @@
               <a href="suplementos.php" class="readmore">Leer guía →</a>
             </div>
           </div>
+
+          <div class="guide-card">
+            <div class="guide-thumb">
+              <img src="publicos/images/inicio/halloween_p1.webp" alt="Guía de Halloween para perros senior">
+            </div>
+            <div class="body">
+              <span class="kicker">Especial Halloween 🎃</span>
+              <h3>Halloween con tu perro senior: guía de temporada</h3>
+              <p>Disfraces cómodos, seguridad nocturna y cómo calmar la ansiedad del 31 de octubre.</p>
+              <a href="halloween.php" class="readmore">Leer guía →</a>
+            </div>
+          </div>
           
         </div>
       </div>

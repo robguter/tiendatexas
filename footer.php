@@ -18,6 +18,7 @@
                 <li><a href="camas.php">Camas Ortopédicas</a></li>
                 <li><a href="rampas.php">Rampas de Movilidad</a></li>
                 <li><a href="suplementos.php">Glucosamina y condroitina</a></li>
+                <li><a href="halloween.php">Especial Halloween 🎃</a></li>
               </ul>
             </div>
 

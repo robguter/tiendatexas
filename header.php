@@ -129,6 +129,7 @@ $url_canonical = isset($canonical) ? $canonical : "https://tiendatexasllc.com/";
           <a href="suplementos.php">🧪 Suplementos Articulares</a>
           <a href="arnes.php">🐕 Arneses de Soporte</a>
           <a href="alfombras.php">🧱 Alfombras Antideslizantes</a>
+          <a href="halloween.php">🎃 Especial Halloween</a>
         </div>
       </div>
 
