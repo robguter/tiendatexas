@@ -1,6 +1,8 @@
 # Configuración local de Visual Studio Code
 .vscode/
 *.code-workspace
+error_log
+privado/suscriptores.csv
 
 # Archivos del sistema operativo Windows 11
 Thumbs.db

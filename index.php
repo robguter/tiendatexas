@@ -2,7 +2,40 @@
   $meta_title = "Tienda Texas — Guías Especializadas para Perros Senior";
   $meta_description = "Comparativas honestas de productos para perros mayores. Analizamos las mejores rampas de movilidad, camas ortopédicas y suplementos avalados por veterinarios.";
   $canonical = "https://tiendatexasllc.com";
-  
+
+  // --- Suscripción al boletín: guarda el correo y avisa al administrador ---
+  $aviso_boletin = "";
+  $lead_registrado = false;
+  if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["boletin_email"])) {
+      $email = filter_var(trim($_POST["boletin_email"]), FILTER_SANITIZE_EMAIL);
+      if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+          $guardado = false;
+          $dir_privado = __DIR__ . "/privado";
+          $archivo = $dir_privado . "/suscriptores.csv";
+          if (!is_dir($dir_privado)) { @mkdir($dir_privado, 0755, true); }
+          $fp = @fopen($archivo, "a");
+          if ($fp) {
+              if (!file_exists($archivo) || filesize($archivo) === 0) { fputcsv($fp, ["fecha", "email"]); }
+              fputcsv($fp, [date("Y-m-d H:i:s"), $email]);
+              fclose($fp);
+              $guardado = true;
+          }
+          // Aviso al administrador (mismo patrón que contacto.php)
+          @mail("admin@tiendatexasllc.com",
+              "Nueva suscripción al boletín — Tienda Texas",
+              "Se ha suscrito al boletín: $email\nFecha: " . date("Y-m-d H:i:s"),
+              "From: web@tiendatexasllc.com\r\nX-Mailer: PHP/" . phpversion());
+          if ($guardado) {
+              $lead_registrado = true;
+              $aviso_boletin = "¡Listo! Te avisaremos por correo cuando publiquemos nuevas guías.";
+          } else {
+              $aviso_boletin = "Tu correo es válido, pero no pudimos guardarlo. Escríbenos a admin@tiendatexasllc.com.";
+          }
+      } else {
+          $aviso_boletin = "Ese correo no parece válido. Revísalo e inténtalo de nuevo.";
+      }
+  }
+
   require_once 'header.php';
   
 ?>
@@ -144,6 +177,27 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <section class="cta-band" id="newsletter">
+      <div class="wrap">
+        <div>
+          <h2>Recibe las nuevas guías en tu correo</h2>
+          <p>Cada guía que publiquemos y las mejores ofertas para perros senior. Sin spam, date de baja cuando quieras.</p>
+        </div>
+        <form class="newsletter-form" action="index.php#newsletter" method="POST">
+          <input type="email" name="boletin_email" placeholder="tu@correo.com" required aria-label="Correo electrónico">
+          <button type="submit" class="btn-primary">Suscribirme</button>
+        </form>
+      </div>
+      <?php if ($aviso_boletin): ?>
+      <div class="wrap">
+        <p class="newsletter-aviso"><?php echo htmlspecialchars($aviso_boletin); ?></p>
+      </div>
+      <?php endif; ?>
+      <?php if ($lead_registrado): ?>
+      <script>fbq('track', 'Lead');</script>
+      <?php endif; ?>
     </section>
 
     <div class="disclosure">

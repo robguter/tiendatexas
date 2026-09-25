@@ -251,3 +251,10 @@ header {
     .footer-bio { margin:0 auto 20px; }
     .footer-socials { justify-content:center; }
 }
+
+/* Formulario del boletín */
+.newsletter-form { display:flex; gap:10px; flex:1 1 320px; max-width:440px; }
+.newsletter-form input[type="email"] { flex:1; padding:13px 16px; border:none; border-radius:8px; font-size:1rem; font-family:inherit; min-width:0; }
+.newsletter-form button { border:none; cursor:pointer; padding:13px 26px; border-radius:8px; font-size:1rem; font-weight:600; font-family:inherit; white-space:nowrap; }
+.newsletter-aviso { background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.35); color:#fff; padding:12px 18px; border-radius:8px; margin-top:18px; width:100%; }
+@media (max-width:768px){ .newsletter-form { flex-direction:column; width:100%; max-width:none; } }

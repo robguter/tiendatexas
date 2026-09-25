@@ -1,7 +1,5 @@
 <?php
-// header.php - Encabezado Centralizado y Optimizado para Tienda Texas LLC
 
-// Variables por defecto si la página no las define de antemano
 $titulo_pagina = isset($meta_title) ? $meta_title : "Tienda Texas — Guías para el cuidado de perros senior";
 $desc_pagina   = isset($meta_description) ? $meta_description : "Guías de compra honestas sobre cuidado de perros senior: rampas de movilidad, camas ortopédicas y suplementos articulares.";
 $url_canonical = isset($canonical) ? $canonical : "https://tiendatexasllc.com/";
@@ -49,6 +47,23 @@ $url_canonical = isset($canonical) ? $canonical : "https://tiendatexasllc.com/";
     gtag('js', new Date());
     gtag('config', 'G-VRCWHT1GMP');
   </script>
+
+  <!-- 4b. Píxel de Meta (Tienda Texas - Web) -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '4163066897323802');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=4163066897323802&ev=PageView&noscript=1"
+  /></noscript>
 
   <!-- 5. Datos Estructurados globales válidos para Google (Sitio Web) -->
   <script type="application/ld+json">
