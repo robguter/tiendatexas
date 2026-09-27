@@ -326,49 +326,47 @@
     ]
   },
   {
-    "asin": "B0CDBQVV57",
+    "asin": "B09B67CMCR",
     "categoria": "halloween",
-    "titulo": "Disfraz de Calabaza Suave para Perros (ABLAZEZAI)",
-    "subtitulo": "EL MÁS CÓMODO",
-    "precio": "$9.99 – $13.99",
-    "estrellas": "4.3 ★ (miles de reseñas)",
-    "capacidad": "Tallas S a L",
+    "titulo": "Bandana de Halloween para Perros, Paquete de 2 (Realeaf)",
+    "subtitulo": "Baberos con estampado de calabaza y telaraña",
+    "precio": "$12.99 – $14.99",
+    "estrellas": "4.8 ★ (1,453 reseñas)",
+    "capacidad": "Tallas S, L, SG",
     "imagenes": [
       "publicos/images/halloween/halloween_01.webp"
     ],
-    "descripcion_corta": "Disfraz de calabaza de tela suave tipo pana con cierre de velcro ajustable: no aprieta, no roza y se pone y quita en segundos.",
-    "resena_larga": "La mejor opción para un perro senior que no está acostumbrado a disfraces: el velcro evita tener que meter las patas por mangas estrechas (clave si hay artritis o rigidez), la tela es ligera y no da calor excesivo, y al ser de una sola pieza no tiene partes que cuelguen y se enreden al caminar.",
+    "descripcion_corta": "Ajustable, transpirable, cómodo, duradero, reversible.",
+    "resena_larga": "Diseño de doble capa para mayor durabilidad y resistente a las mordeduras de las mascotas, que durará más que todas las aventuras de tu perro.",
     "pros": [
-      "Velcro ajustable: no hay que forzar las patas para vestirlo",
+      "Ajustable, reversible",
       "Tela suave y ligera, no restringe el movimiento",
-      "Varias tallas para razas pequeñas y medianas"
+      "Varias tallas para razas pequeñas, medianas y grandes"
     ],
     "contras": [
-      "El gorro puede molestar a perros que no toleran nada en la cabeza",
-      "Solo diseño de calabaza"
+      "Nada"
     ]
   },
   {
-    "asin": "B0FHPX4N57",
+    "asin": "B074QN1MC6",
     "categoria": "halloween",
-    "titulo": "Disfraz de Fantasma con Bolsillo para Premios (MEWTOGO)",
-    "subtitulo": "CON BOLSILLO DE DULCES",
-    "precio": "$12.99 – $16.99",
-    "estrellas": "4.4 ★ (miles de reseñas)",
-    "capacidad": "Tallas S a L",
+    "titulo": "Suéter de Calabaza para Perros (NACOCO)",
+    "subtitulo": "Ideal para fiestas de Halloween",
+    "precio": "$11.99 – $22.99",
+    "estrellas": "4.6 ★ (1.401 reseñas)",
+    "capacidad": "Tallas 2XS a 2XL",
     "imagenes": [
       "publicos/images/halloween/halloween_02.webp"
     ],
-    "descripcion_corta": "Capa de fantasma con apertura amplia para la cara y bolsillo de calabaza en el pecho para llevar premios.",
-    "resena_larga": "El diseño de capa suelta es ideal para perros senior: no comprime el torso, deja la cara totalmente despejada para respirar y ver bien, y el bolsillo de calabaza sirve para llevar los premios calmantes o las golosinas de la noche. El cierre de velcro en el cuello se ajusta sin apretar.",
+    "descripcion_corta": "¡Un suéter de calabaza para perros muy lindo! Es fácil de poner y quitar para la mascota.",
+    "resena_larga": "Fabricado con material de fibras acrílicas, resulta cómodo para que lo lleve puesto tu perro.",
     "pros": [
-      "Cara despejada: respira y ve sin obstrucciones",
-      "Bolsillo funcional para premios",
-      "Capa suelta que no limita el movimiento"
+      "Cómodo",
+      "Para varias fiestas",
+      "No limita el movimiento"
     ],
     "contras": [
-      "La capa larga puede arrastrarse en perros muy pequeños",
-      "Solo en blanco"
+      "Solo calabaza"
     ]
   },
   {
