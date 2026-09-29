@@ -148,7 +148,7 @@ $logo = ($lang === 'en') ? "/publicos/images/logo.webp"
 <header>
   <div class="wrap nav">
     <div class="logo-wrap">
-      <img src="publicos/images/logo.webp" alt="Tienda Texas LLC" class="logo-img">
+      <img src="<?php echo htmlspecialchars($logo); ?>" alt="Tienda Texas LLC" class="logo-img">
       <span class="logo-tag">Perros Senior</span>
     </div>
 
