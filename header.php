@@ -79,8 +79,8 @@ $styl = ($lang === 'en') ? "/publicos/estilo/estilo.css" : "publicos/estilo/esti
   <link rel="preconnect" href="https://gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="publicos/estilo/main.css">
-  <link rel="stylesheet" href="publicos/estilo/estilo.css">
+  <link rel="stylesheet" href="<?php echo htmlspecialchars($main); ?>">
+  <link rel="stylesheet" href="<?php echo htmlspecialchars($styl); ?>">
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VRCWHT1GMP"></script>
   <script>
