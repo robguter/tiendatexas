@@ -10,7 +10,7 @@
   
   $json_path = 'productos.json';
   if (!file_exists($json_path)) {
-      echo "<p class='contenedor-productos'>Error: No se encontró el archivo de productos.</p>";
+                echo "<p class='contenedor-productos'>Error: The product file was not found.</p>";
       exit;
   }
 
@@ -23,7 +23,7 @@
 ?>
 
 
-<div class="article-head" style="background-image:linear-gradient(rgba(250,247,242,0.82), rgba(250,247,242,0.92)), url('publicos/images/halloween/halloween_01.webp'); background-size:cover; background-position:center;">
+<div class="article-head" style="background-image:linear-gradient(rgba(250,247,242,0.82), rgba(250,247,242,0.92)), url('/publicos/images/halloween/halloween_01.webp'); background-size:cover; background-position:center;">
   <div class="wrap-article">
     <span class="kicker">Especial Halloween 🎃</span>
     <h1>Halloween con tu perro senior: disfraces cómodos y seguridad nocturna</h1>
@@ -32,7 +32,7 @@
 </div>
 
 <div class="guide-banner">
-  <img src="publicos/images/halloween/halloween_p1.webp" alt="Perro con disfraz de calabaza para Halloween">
+  <img src="/publicos/images/halloween/halloween_p1.webp" alt="Perro con disfraz de calabaza para Halloween">
 </div>
 
 <article>
@@ -55,7 +55,7 @@
       <?php foreach ($productos_filtrados as $indice => $prod):
           $enlace_afiliado = obtener_enlace_amazon($prod['asin']);
           // Usamos la primera imagen de la lista como foto inicial por defecto
-          $foto_inicial = !empty($prod['imagenes']) ? $prod['imagenes'][0] : 'publicos/images/halloween/halloween_p1.webp';
+          $foto_inicial = !empty($prod['imagenes']) ? $prod['imagenes'][0] : '/publicos/images/halloween/halloween_p1.webp';
           $id_visor_unico = "visor-" . $indice;
       ?>
         <!-- TARJETA DE PRODUCTO MODERNA -->
@@ -136,7 +136,7 @@
         <?php endif; ?>
       </main>
 
-      <script src="publicos/js/galeria.js"></script>
+      <script src="/publicos/js/galeria.js"></script>
 
 
 

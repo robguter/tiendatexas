@@ -92,7 +92,7 @@ h1 { font-size:2rem; color: var(--nogal); text-align:center; margin-bottom:20px;
     margin-bottom: 40px;
     transition: transform .2s ease, box-shadow .2s ease;
 }
-.producto-card:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(43,32,22,.10); }
+.producto-card:hover .imagen-con-caption .imagen-principal-box { box-shadow: 0 16px 32px rgba(43,32,22,.10); }
 
 /* ==========================================================================
    GALERÍA
@@ -175,6 +175,16 @@ form div input, form div textarea {
     border: 1px solid var(--gris-borde);
     border-radius: 6px; font-family: inherit;
 }
+
+.imagen-con-caption div > h5 {
+  position: absolute;
+  text-align: center;
+  background: #00000058;
+  color: #FFFFFFA8;
+  margin-top: 18.30%;
+  margin-left: 14.75%;
+}
+
 /* ==========================================================================
    RESPONSIVE
    ========================================================================== */

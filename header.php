@@ -1,45 +1,85 @@
 <?php
+// ===== Raíz en español, inglés en /en/ =====
+$uri        = $_SERVER['REQUEST_URI'] ?? '/';
+$en_version = (strpos($uri, '/en/') === 0 || $uri === '/en');
+$lang       = $en_version ? 'en' : 'es';
 
-$titulo_pagina = isset($meta_title) ? $meta_title : "Tienda Texas — Guías para el cuidado de perros senior";
-$desc_pagina   = isset($meta_description) ? $meta_description : "Guías de compra honestas sobre cuidado de perros senior: rampas de movilidad, camas ortopédicas y suplementos articulares.";
-$url_canonical = isset($canonical) ? $canonical : "https://tiendatexasllc.com/";
+// Auto-redirect por idioma: solo primera visita (sin cookie) y nunca a bots
+if (!isset($_COOKIE['tt_lang'])) {
+    $ua     = $_SERVER['HTTP_USER_AGENT'] ?? '';
+    $es_bot = preg_match('/bot|crawl|slurp|spider|mediapartners/i', $ua);
+    if (!$es_bot) {
+        $al = strtolower(substr($_SERVER['HTTP_ACCEPT_LANGUAGE'] ?? 'es', 0, 2));
+        if ($al !== 'es' && !$en_version) {
+            header('Location: /en' . $uri, true, 302);
+            exit;
+        }
+    }
+}
+
+// ===== Tus variables (sin cambios) =====
+$titulo_pagina = isset($meta_title) ? $meta_title 
+                                    : "Tienda Texas — Guías para el cuidado de perros senior";
+$desc_pagina   = isset($meta_description) ? $meta_description 
+                                          : "Guías de compra honestas sobre cuidado de perros senior: rampas de movilidad, camas ortopédicas y suplementos articulares.";
+$url_canonical = isset($canonical) ? $canonical 
+                                   : "https://tiendatexasllc.com/";
+
+// ===== URLs por idioma derivadas de LA CANONICAL de cada página =====
+if (strpos($url_canonical, '/en/') !== false || substr($url_canonical, -3) === '/en') {
+    $url_en = $url_canonical;
+    $url_es = preg_replace('#/en(?=/|$)#', '', $url_canonical, 1);
+} else {
+    $url_es = $url_canonical;
+    $url_en = preg_replace('#^(https?://[^/]+)#', '$1/en', $url_canonical, 1);
+}
+$canonical_out = ($lang === 'en') ? $url_en 
+                                  : $url_es;
+$og_locale     = ($lang === 'en') ? 'en_US' 
+                                  : 'es_US';
+$json_name     = ($lang === 'en') ? "Tienda Texas - Buying guides for senior dog care"
+                                  : "Tienda Texas - Guías de compra sobre cuidado de perros senior";
+$json_desc     = ($lang === 'en') ? "Honest buying guides for senior dog care: mobility ramps, orthopedic beds and joint supplements."
+                                  : "Guías de compra sobre cuidado de perros senior: rampas, camas ortopédicas y suplementos articulares.";
 ?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="<?php echo $lang; ?>">
 <head>
-  <!-- 1. Declaraciones críticas para el navegador siempre arriba -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title><?php echo htmlspecialchars($titulo_pagina); ?></title>
   <meta name="description" content="<?php echo htmlspecialchars($desc_pagina); ?>">
-  <link rel="canonical" href="<?php echo $url_canonical; ?>">
+  
+  <link rel="canonical" href="<?php echo htmlspecialchars($canonical_out); ?>">
+  <link rel="alternate" hreflang="es" href="<?php echo htmlspecialchars($url_es); ?>">
+  <link rel="alternate" hreflang="en" href="<?php echo htmlspecialchars($url_en); ?>">
+  <link rel="alternate" hreflang="x-default" href="<?php echo htmlspecialchars($url_en); ?>">
   
   <meta name="facebook-domain-verification" content="8qgojd6qcc9etr6xs0pl9rtlmee249" />
   <meta name="keywords" content="Tienda Texas LLC, Tienda Texas, Guías de compra, cuidado de perros, Perros senior, rampas para perros, camas ortopédicas para perros, suplementos articulares para perros, Mascotas senior" />
   <meta property="og:type" content="website">
   <meta property="og:title" content="<?php echo htmlspecialchars($titulo_pagina); ?>">
   <meta property="og:description" content="<?php echo htmlspecialchars($desc_pagina); ?>">
-  <meta property="og:url" content="<?php echo $url_canonical; ?>">
+
+  <meta property="og:url" content="<?php echo htmlspecialchars($canonical_out); ?>">
+  <meta property="og:locale" content="<?php echo $og_locale; ?>">
+
   <meta property="og:image" content="https://tiendatexasllc.com/publicos/images/logo.webp">
-  <meta property="og:locale" content="es_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="<?php echo htmlspecialchars($titulo_pagina); ?>">
   <meta name="twitter:description" content="<?php echo htmlspecialchars($desc_pagina); ?>">
   <meta name="twitter:image" content="https://tiendatexasllc.com/publicos/images/logo.webp">
   
   <link rel="icon" type="image/x-icon" href="https://tiendatexasllc.com/tiendatexas.ico">
-
-  <!-- 3. Conexiones externas y fuentes -->
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   
-  <!-- Tus estilos corregidos guardados en la ruta que creaste -->
   <link rel="stylesheet" href="publicos/estilo/main.css">
   <link rel="stylesheet" href="publicos/estilo/estilo.css">
-
-  <!-- 4. Scripts de analítica (Google Tag Manager) -->
+  
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VRCWHT1GMP"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -47,8 +87,7 @@ $url_canonical = isset($canonical) ? $canonical : "https://tiendatexasllc.com/";
     gtag('js', new Date());
     gtag('config', 'G-VRCWHT1GMP');
   </script>
-
-  <!-- 4b. Píxel de Meta (Tienda Texas - Web) -->
+  
   <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -64,20 +103,18 @@ $url_canonical = isset($canonical) ? $canonical : "https://tiendatexasllc.com/";
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=4163066897323802&ev=PageView&noscript=1"
   /></noscript>
-
-  <!-- 5. Datos Estructurados globales válidos para Google (Sitio Web) -->
+  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Tienda Texas - Guías de compra sobre cuidado de perros senior",
+    "name": <?php echo $json_name; ?>,
     "@id": "https://tiendatexasllc.com/",
     "url": "https://tiendatexasllc.com/",
-    "description": "Guías de compra sobre cuidado de perros senior: rampas, camas ortopédicas y suplementos articulares."
+    "description": <?php echo $json_desc; ?>
   }
   </script>
-
-  <!-- Datos Estructurados globales (Organización) -->
+  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -101,8 +138,7 @@ $url_canonical = isset($canonical) ? $canonical : "https://tiendatexasllc.com/";
   </script>
 </head>
 <body>
-
-<!-- header.php -->
+  
 <header>
   <div class="wrap nav">
     <div class="logo-wrap">
@@ -135,6 +171,11 @@ $url_canonical = isset($canonical) ? $canonical : "https://tiendatexasllc.com/";
 
       <a href="index.php#por-que">Por qué senior</a>
       <a href="index.php#newsletter">Boletín</a>
+      <div class="lang-switch">
+        <a href="<?php echo htmlspecialchars($url_es); ?>" onclick="document.cookie='tt_lang=es;path=/;max-age=31536000'">ES</a>
+        <span>|</span>
+        <a href="<?php echo htmlspecialchars($url_en); ?>" onclick="document.cookie='tt_lang=en;path=/;max-age=31536000'">EN</a>
+      </div>
     </nav>
   </div>
 </header>

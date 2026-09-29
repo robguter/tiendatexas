@@ -11,7 +11,7 @@
             
             $json_path = 'productos.json';
             if (!file_exists($json_path)) {
-                echo "<p class='contenedor-productos'>Error: No se encontró el archivo de productos.</p>";
+                echo "<p class='contenedor-productos'>Error: The product file was not found.</p>";
                 exit;
             }
 
@@ -32,7 +32,7 @@
         </div>
 
         <div class="guide-banner">
-        <img src="publicos/images/suplementos/suplementos_p10.webp" alt="Perro senior activo al aire libre">
+        <img src="/publicos/images/suplementos/suplementos_p10.webp" alt="Perro senior activo al aire libre">
         </div>
 
         <article>
@@ -53,7 +53,7 @@
                 <?php else: ?>
                 <?php foreach ($productos_filtrados as $indice => $prod): 
                     $enlace_afiliado = obtener_enlace_amazon($prod['asin']);
-                    $foto_inicial = !empty($prod['imagenes']) ? $prod['imagenes'][0] : 'publicos/images/suplementos/default.jpg';
+                    $foto_inicial = !empty($prod['imagenes']) ? $prod['imagenes'][0] : '/publicos/images/suplementos/default.jpg';
                     $id_visor_unico = "visor-" . $indice;
                 ?>
                 <!-- TARJETA DE PRODUCTO MODERNA -->
@@ -135,7 +135,7 @@
                 <?php endif; ?>
             </main>
 
-            <script src="publicos/js/galeria.js"></script>
+            <script src="/publicos/js/galeria.js"></script>
 
 
             <h2>Qué dice la evidencia científica</h2>

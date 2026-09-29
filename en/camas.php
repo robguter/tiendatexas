@@ -4,13 +4,13 @@
             $meta_description = "Comparamos las mejores camas ortopédicas para perros mayores, incluyendo displasia de cadera: qué densidad de espuma buscar y cuándo vale la pena pagar más.";
             $canonical = "https://tiendatexasllc.com/camas.php";
             
-            $pagina_tipo = 'guia'; // Activa el CSS de productos en el header
+            $pagina_tipo = 'guia';
             require_once 'header.php';
             require_once 'config.php';
             
             $json_path = 'productos.json';
             if (!file_exists($json_path)) {
-                echo "<p class='contenedor-productos'>Error: No se encontró el archivo de productos.</p>";
+                echo "<p class='contenedor-productos'>Error: The product file was not found.</p>";
                 exit;
             }
 
@@ -31,7 +31,7 @@
         </div>
 
         <div class="guide-banner">
-        <img src="publicos/images/camas/camas_p1.webp" alt="Perro descansando en cama para mascotas">
+        <img src="/publicos/images/camas/camas_p1.webp" alt="Perro descansando en cama para mascotas">
         </div>
 
         <article>
@@ -50,7 +50,7 @@
             <?php foreach ($productos_filtrados as $indice => $prod): 
                 $enlace_afiliado = obtener_enlace_amazon($prod['asin']); 
                 // Usamos la primera imagen de la lista como foto inicial por defecto
-                $foto_inicial = !empty($prod['imagenes']) ? $prod['imagenes'][0] : 'publicos/images/camas/default.jpg';
+                $foto_inicial = !empty($prod['imagenes']) ? $prod['imagenes'][0] : '/publicos/images/camas/default.jpg';
                 $id_visor_unico = "visor-" . $indice;
             ?>
                 <!-- TARJETA DE PRODUCTO MODERNA -->
@@ -131,7 +131,7 @@
                 <?php endif; ?>
             </main>
 
-            <script src="publicos/js/galeria.js"></script>
+            <script src="/publicos/js/galeria.js"></script>
 
 
             <h2>¿Por qué importa tanto en perros senior?</h2>

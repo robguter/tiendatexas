@@ -73,18 +73,15 @@
                         <?php endforeach; ?>
                     <?php endif; ?>
                 </div>
-                
-                <!-- Contenedor e Imagen Principal -->
+                            
                 <div class="imagen-con-caption">
                     <div class="imagen-principal-box">
+                        <h5>Foto ilustrativa</h5>
                         <img id="<?php echo $id_visor_unico; ?>" 
                             src="<?php echo htmlspecialchars($foto_inicial); ?>" 
                             alt="<?php echo htmlspecialchars($prod['titulo']); ?>" 
                             loading="lazy">
                     </div>
-                    <a href="<?php echo $enlace_afiliado; ?>" class="foto-caption" target="_blank" rel="noopener nofollow">
-                        Foto ilustrativa — Ver foto real en Amazon →
-                    </a>
                 </div>
 
             </div>

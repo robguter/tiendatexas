@@ -12,7 +12,7 @@
             
             $json_path = 'productos.json';
             if (!file_exists($json_path)) {
-                echo "<p class='contenedor-productos'>Error: No se encontró el archivo de productos.</p>";
+                echo "<p class='contenedor-productos'>Error: The product file was not found.</p>";
                 exit;
             }
 
@@ -33,7 +33,7 @@
         </div>
 
         <div class="guide-banner">
-            <img src="publicos/images/rampas/rampas_p1.webp" alt="Perro senior en escalones">
+            <img src="/publicos/images/rampas/rampas_p1.webp" alt="Perro senior en escalones">
         </div>
 
         <article>
@@ -53,7 +53,7 @@
                     <?php foreach ($productos_filtrados as $indice => $prod): 
                         $enlace_afiliado = obtener_enlace_amazon($prod['asin']); 
                         // Usamos la primera imagen de la lista como foto inicial por defecto
-                        $foto_inicial = !empty($prod['imagenes']) ? $prod['imagenes'][0] : 'publicos/images/rampas/default.jpg';
+                        $foto_inicial = !empty($prod['imagenes']) ? $prod['imagenes'][0] : '/publicos/images/rampas/default.jpg';
                         $id_visor_unico = "visor-" . $indice;
                     ?>
                     <!-- TARJETA DE PRODUCTO MODERNA -->
@@ -134,7 +134,7 @@
                     <?php endif; ?>
                     </main>
 
-                    <script src="publicos/js/galeria.js"></script>
+                    <script src="/publicos/js/galeria.js"></script>
 
                 <p class="pick-note">Nota: Aodisman, EHEYCIGA y Ahpmeoa están diseñados para perros pequeños y medianos. PetSafe CozyUp es la opción premium con mejor marca reconocida, y Fecuria es la única de esta lista pensada para razas grandes.</p>
 
