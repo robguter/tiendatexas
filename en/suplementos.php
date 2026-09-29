@@ -4,18 +4,40 @@
     $meta_title = "Glucosamine and Chondroitin for Senior Dogs: Dosage and Trusted Brands — Tienda Texas";
     $meta_description = "How much glucosamine and chondroitin does your senior dog need? Dosage by weight, what the evidence says, and how to choose a trusted brand on Amazon.";
     $canonical = "https://tiendatexasllc.com/en/suplementos.php";
-
+    
     require_once __DIR__ . '/../header.php';
     require_once __DIR__ . '/../config.php';
-    $json_path = __DIR__ . '/../productos_en.json';
-
-    if (!file_exists($json_path)) {
+    $en_path = __DIR__ . '/../productos_en.json';
+    $base_path = __DIR__ . '/../productos.json';
+    
+    if (!file_exists($base_path) || !file_exists($en_path)) {
         echo "<p class='contenedor-productos'>Error: The product file was not found.</p>";
         exit;
     }
 
-    $json_data = file_get_contents($json_path);
-    $todos_los_productos = json_decode($json_data, true);
+    $base   = json_decode(file_get_contents($base_path), true);
+    $en_raw = json_decode(file_get_contents($en_path), true);
+
+    $en_by_asin = [];
+    foreach ($en_raw as $e) {
+        if (!empty($e['asin'])) { $en_by_asin[$e['asin']] = $e; }
+    }
+
+    $todos_los_productos = [];
+    foreach ($base as $p) {
+        $asin = $p['asin'] ?? null;
+        if ($asin && isset($en_by_asin[$asin])) {
+            $ov = $en_by_asin[$asin];
+            foreach (['titulo','subtitulo','descripcion_corta','resena_larga','pros','contras','capacidad','estrellas'] as $k) {
+                if (isset($ov[$k . '_en'])) { $p[$k] = $ov[$k . '_en']; }
+            }
+        }
+        // Normaliza rutas de imagen a absolutas (el JSON las trae relativas)
+        if (!empty($p['imagenes'])) {
+            $p['imagenes'] = array_map(function($u) { return '/' . ltrim($u, '/'); }, (array)$p['imagenes']);
+        }
+        $todos_los_productos[] = $p;
+    }
 
     $productos_filtrados = array_filter($todos_los_productos, function($p) use ($categoria_filtrada) {
         return isset($p['categoria']) && $p['categoria'] === $categoria_filtrada;
