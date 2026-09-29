@@ -47,7 +47,7 @@
 <div class="article-head"
     style="background-image:linear-gradient(rgba(250,247,242,0.82), rgba(250,247,242,0.92)), url('https://images.unsplash.com/photo-1651777229439-beef9fda852f?fm=jpg&q=80&w=1400&auto=format&fit=crop'); background-size:cover; background-position:center;">
     <div class="wrap-article">
-        <span class="kicker">Supplements</span>
+        <span class="kicker">Supplements 🧪</span>
         <h1><?php echo htmlspecialchars($meta_title); ?></h1>
         <p class="meta">Buyer's Guide · Updated 2026 · 8 min read</p>
     </div>

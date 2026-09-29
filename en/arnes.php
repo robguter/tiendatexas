@@ -48,7 +48,7 @@
 <div class="article-head"
     style="background-image:linear-gradient(rgba(250,247,242,0.82), rgba(250,247,242,0.92)), url('https://images.unsplash.com/photo-1621291235186-58f624ea79f8?fm=jpg&q=80&w=1400&auto=format&fit=crop'); background-size:cover; background-position:center;">
     <div class="wrap-article">
-        <span class="kicker">Mobility</span>
+        <span class="kicker">Mobility 🐕</span>
         <h1>Rear support harness for senior dogs: how to choose the right one</h1>
         <p class="meta">Buyer's Guide · Updated 2026 · 7 min read</p>
     </div>

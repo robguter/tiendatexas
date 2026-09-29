@@ -47,7 +47,7 @@
 <div class="article-head"
     style="background-image:linear-gradient(rgba(250,247,242,0.82), rgba(250,247,242,0.92)), url('https://images.unsplash.com/photo-1642303009699-7d7fd6d4a243?fm=jpg&q=80&w=1400&auto=format&fit=crop'); background-size:cover; background-position:center;">
     <div class="wrap-article">
-        <span class="kicker">Rest</span>
+        <span class="kicker">Rest 🛏️</span>
         <h1>Orthopedic beds for senior dogs: which ones are the best</h1>
         <p class="meta">Buyer's Guide · Updated 2026 · 7 min read</p>
     </div>

@@ -26,7 +26,7 @@
 
         <div class="article-head" style="background-image:linear-gradient(rgba(250,247,242,0.82), rgba(250,247,242,0.92)), url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?fm=jpg&q=80&w=1400&auto=format&fit=crop'); background-size:cover; background-position:center;">
             <div class="wrap-article">
-                <span class="kicker">Movilidad</span>
+                <span class="kicker">Movilidad 🐾</span>
                 <h1><?php echo htmlspecialchars($meta_title); ?></h1>
                 <p class="meta">Guía de compra · Actualizado 2026 · 8 min de lectura</p>
             </div>

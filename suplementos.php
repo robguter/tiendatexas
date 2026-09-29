@@ -25,7 +25,7 @@
 
         <div class="article-head" style="background-image:linear-gradient(rgba(250,247,242,0.82), rgba(250,247,242,0.92)), url('https://images.unsplash.com/photo-1651777229439-beef9fda852f?fm=jpg&q=80&w=1400&auto=format&fit=crop'); background-size:cover; background-position:center;">
         <div class="wrap-article">
-            <span class="kicker">Suplementos</span>
+            <span class="kicker">Suplementos 🧪</span>
             <h1>Glucosamina y Condroitina para Perros Senior: Dosis y Marcas Confiables. ¿Qué dice la evidencia realmente?</h1>
             <p class="meta">Guía de compra · Actualizado 2026 · 8 min de lectura</p>
         </div>

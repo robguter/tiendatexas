@@ -47,7 +47,7 @@
 <div class="article-head"
     style="background-image:linear-gradient(rgba(250,247,242,0.82), rgba(250,247,242,0.92)), url('https://images.unsplash.com/photo-1679108797373-4f0b8253d9bf?fm=jpg&q=80&w=1400&auto=format&fit=crop'); background-size:cover; background-position:center;">
     <div class="wrap-article">
-        <span class="kicker">Safety at home</span>
+        <span class="kicker">Safety at home 🧱</span>
         <h1>Non-slip mats for senior dogs: practical guide</h1>
         <p class="meta">Buyer's Guide · Updated 2026 · 6 min read</p>
     </div>

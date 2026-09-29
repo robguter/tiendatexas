@@ -24,7 +24,7 @@
 
         <div class="article-head" style="background-image:linear-gradient(rgba(250,247,242,0.82), rgba(250,247,242,0.92)), url('https://images.unsplash.com/photo-1642303009699-7d7fd6d4a243?fm=jpg&q=80&w=1400&auto=format&fit=crop'); background-size:cover; background-position:center;">
         <div class="wrap-article">
-            <span class="kicker">Descanso</span>
+            <span class="kicker">Descanso 🛏️</span>
             <h1>Camas ortopédicas para perros senior (o "mayores"): cuáles son las mejores</h1>
             <p class="meta">Guía de compra · Actualizado 2026 · 7 min de lectura</p>
         </div>

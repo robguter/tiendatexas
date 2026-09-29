@@ -26,7 +26,7 @@
 
 <div class="article-head" style="background-image:linear-gradient(rgba(250,247,242,0.82), rgba(250,247,242,0.92)), url('https://images.unsplash.com/photo-1621291235186-58f624ea79f8?fm=jpg&q=80&w=1400&auto=format&fit=crop'); background-size:cover; background-position:center;">
   <div class="wrap-article">
-    <span class="kicker">Movilidad</span>
+    <span class="kicker">Movilidad 🐕</span>
     <h1>Arnés de soporte trasero para perros senior (mayor): cómo elegir el correcto</h1>
     <p class="meta">Guía de compra · Actualizado 2026 · 7 min de lectura</p>
   </div>
