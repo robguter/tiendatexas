@@ -1,11 +1,10 @@
 <?php
-  $categoria_filtrada = 'arnes'; 
-  // 1. Configuras el SEO específico para este artículo antes de llamar al header
+  $categoria_filtrada = 'arnes';
+  $pagina_tipo = 'guia';
   $meta_title = "Arnés de soporte trasero para perros senior: guía práctica — Tienda Texas";
   $meta_description = "Cómo elegir un arnés de soporte trasero para perros senior con debilidad en las patas traseras: tipos, tallas y cuándo usarlo.";
   $canonical = "https://tiendatexasllc.com/arnes.php";
   
-  $pagina_tipo = 'guia'; // Activa el CSS de productos en el header
   require_once 'header.php';
   require_once 'config.php'; 
 
@@ -200,6 +199,3 @@
 </article>
 
 <?php require_once 'footer.php'; ?>
-
-</body>
-</html>

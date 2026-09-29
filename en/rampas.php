@@ -1,195 +1,225 @@
-        <?php
-            $categoria_filtrada = 'rampas';
-            
-            $meta_title = "Las mejores rampas para perros senior: cómo elegir la correcta";
-            $meta_description = "Comparamos rampas para perros senior: estabilidad, capacidad de peso, precio y calificaciones reales.";
-            $canonical = "https://tiendatexasllc.com/rampas.php";
-                
-            // Carga de componentes centrales
-            $pagina_tipo = 'guia'; // Activa el CSS de productos en el header
-            require_once 'header.php';
-            require_once 'config.php'; 
-            
-            $json_path = 'productos.json';
-            if (!file_exists($json_path)) {
-                echo "<p class='contenedor-productos'>Error: The product file was not found.</p>";
-                exit;
-            }
+<?php
+    $categoria_filtrada = 'rampas';
+    $pagina_tipo = 'guia';
+    $meta_title = "Best ramps for senior dogs: how to choose the right one — Tienda Texas";
+    $meta_description = "We compare ramps for senior dogs: stability, weight capacity, price, and real ratings.";
+    $canonical = "https://tiendatexasllc.com/en/rampas.php";
 
-            $json_data = file_get_contents($json_path);
-            $todos_los_productos = json_decode($json_data, true);
-            
-            $productos_filtrados = array_filter($todos_los_productos, function($p) use ($categoria_filtrada) {
-                return isset($p['categoria']) && $p['categoria'] === $categoria_filtrada;
-            });
-        ?>
+    require_once __DIR__ . '/../header.php';
+    require_once __DIR__ . '/../config.php';
+    $json_path = __DIR__ . '/../productos_en.json';
 
-        <div class="article-head" style="background-image:linear-gradient(rgba(250,247,242,0.82), rgba(250,247,242,0.92)), url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?fm=jpg&q=80&w=1400&auto=format&fit=crop'); background-size:cover; background-position:center;">
-            <div class="wrap-article">
-                <span class="kicker">Movilidad</span>
-                <h1><?php echo htmlspecialchars($meta_title); ?></h1>
-                <p class="meta">Guía de compra · Actualizado 2026 · 8 min de lectura</p>
-            </div>
-        </div>
+    if (!file_exists($json_path)) {
+        echo "<p class='contenedor-productos'>Error: The product file was not found.</p>";
+        exit;
+    }
 
-        <div class="guide-banner">
-            <img src="/publicos/images/rampas/rampas_p1.webp" alt="Perro senior en escalones">
-        </div>
+    $json_data = file_get_contents($json_path);
+    $todos_los_productos = json_decode($json_data, true);
+    
+    $productos_filtrados = array_filter($todos_los_productos, function($p) use ($categoria_filtrada) {
+        return isset($p['categoria']) && $p['categoria'] === $categoria_filtrada;
+    });
+    ?>
 
-        <article>
-            <div class="wrap-article">
+<div class="article-head"
+    style="background-image:linear-gradient(rgba(250,247,242,0.82), rgba(250,247,242,0.92)), url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?fm=jpg&q=80&w=1400&auto=format&fit=crop'); background-size:cover; background-position:center;">
+    <div class="wrap-article">
+        <span class="kicker">Mobility</span>
+        <h1><?php echo htmlspecialchars($meta_title); ?></h1>
+        <p class="meta">Buyer's Guide · Updated 2026 · 8 min read</p>
+    </div>
+</div>
 
-                <p>Si tu perro senior (mayor) empezó a dudar antes de saltar al sofá, o notas que se queda pensando dos segundos de más frente a las escaleras del auto, probablemente ya te lo está diciendo a su manera: sus articulaciones ya no responden como antes. Una rampa bien elegida no es un lujo, es una forma directa de reducir el desgaste en sus caderas y rodillas cada vez que sube o baja de un lugar alto.</p>
+<div class="guide-banner">
+    <img src="/publicos/images/rampas/rampas_p1.webp" alt="Senior dog on steps">
+</div>
 
-                <p>El problema es que no todas las rampas sirven para todos los perros. Una rampa demasiado empinada puede intimidar a un perro con dolor articular, y una demasiado larga puede no caber en tu auto o tu casa. Aquí te explico qué mirar antes de comprar, para que no termines con una rampa que tu perro simplemente se niega a usar.</p>
+<article>
+    <div class="wrap-article">
 
-                
-                <p>Actualizamos esta lista tras revisar el historial de reseñas de cada producto: reemplazamos una opción con poco respaldo por una marca más establecida. Los primeros 3 modelos están pensados para perros pequeños y medianos, el cuarto es premium y el quinto es para razas grandes.</p>
-                <main class="contenedor-productos">
-                    
-                    <?php if (empty($productos_filtrados)): ?>
-                        <p style="text-align: center; color: #666; margin-top: 40px;">Próximamente añadiremos nuestros análisis detallados para esta sección. ¡Mantente atento!</p>
-                    <?php else: ?>
-                    <?php foreach ($productos_filtrados as $indice => $prod): 
-                        $enlace_afiliado = obtener_enlace_amazon($prod['asin']); 
-                        // Usamos la primera imagen de la lista como foto inicial por defecto
-                        $foto_inicial = !empty($prod['imagenes']) ? $prod['imagenes'][0] : '/publicos/images/rampas/default.jpg';
-                        $id_visor_unico = "visor-" . $indice;
-                    ?>
-                    <!-- TARJETA DE PRODUCTO MODERNA -->
-                    <article class="producto-card">
-                        
-                        <!-- GALERÍA ESTILO AMAZON -->
-                        <div class="galeria-amazon">
-                            <!-- Miniaturas laterales (Solo se dibujan si hay más de 1 imagen) -->
-                            <div class="miniaturas-col">
-                                <?php if (isset($prod['imagenes']) && count($prod['imagenes']) > 1): ?>
-                                    <?php foreach ($prod['imagenes'] as $sub_indice => $img_url): ?>
-                                        <img src="<?php echo htmlspecialchars($img_url); ?>" 
-                                            class="miniatura-img <?php echo $sub_indice === 0 ? 'activa' : ''; ?>" 
-                                            alt="Miniatura de vista del producto"
-                                            onclick="cambiarImagenGaleria(this, '<?php echo $id_visor_unico; ?>')">
-                                    <?php endforeach; ?>
-                                <?php endif; ?>
-                            </div>
-                            
-                            <div class="imagen-con-caption">
-                                <div class="imagen-principal-box">
-                                    <h5>Foto ilustrativa</h5>
-                                    <img id="<?php echo $id_visor_unico; ?>" 
-                                        src="<?php echo htmlspecialchars($foto_inicial); ?>" 
-                                        alt="<?php echo htmlspecialchars($prod['titulo']); ?>" 
-                                        loading="lazy">
-                                </div>
-                            </div>
+        <p>If your senior dog has started hesitating before jumping on the couch, or you notice it pausing a couple of
+            seconds longer in front of the car steps, it's probably telling you in its own way: its joints don't respond
+            like they used to. A well-chosen ramp isn't a luxury — it's a direct way to reduce wear on its hips and
+            knees every time it climbs up or down from a high place.</p>
 
-                        </div>
+        <p>The problem is that not every ramp works for every dog. A ramp that's too steep can intimidate a dog with
+            joint pain, and one that's too long may not fit in your car or your home. Here I explain what to look at
+            before buying, so you don't end up with a ramp your dog simply refuses to use.</p>
 
-                        <!-- ENCABEZADO E INFORMACIÓN -->
-                        <div class="producto-encabezado">
-                            <h3 class="producto-titulo"><?php echo htmlspecialchars($prod['titulo']); ?></h3>
-                            <?php if (!empty($prod['subtitulo'])): ?>
-                                <span class="badge-marca"><?php echo htmlspecialchars($prod['subtitulo']); ?></span>
-                            <?php endif; ?>
-                        </div>
+        <p>We updated this list after reviewing each product's review history: we replaced a poorly backed option with a
+            more established brand. The first 3 models are designed for small and medium dogs, the fourth is premium,
+            and the fifth is for large breeds.</p>
 
-                        <div class="meta-info">
-                            <span class="meta-precio"><?php echo htmlspecialchars($prod['precio']); ?></span>
-                            <span class="meta-resenas"><?php echo htmlspecialchars($prod['estrellas']); ?></span>
-                            <?php if (!empty($prod['capacidad'])): ?>
-                                <span class="meta-capacidad"><?php echo htmlspecialchars($prod['capacidad']); ?></span>
-                            <?php endif; ?>
-                        </div>
+        <main class="contenedor-productos">
 
-                        <p class="resena-texto">
-                            <strong>Nuestro análisis:</strong> <?php echo htmlspecialchars($prod['descripcion_corta']); ?>
-                        </p>
-                        
-                        <?php if (!empty($prod['resena_larga'])): ?>
-                            <p class="resena-texto"><?php echo htmlspecialchars($prod['resena_larga']); ?></p>
+            <?php if (empty($productos_filtrados)): ?>
+            <p style="text-align: center; color: #666; margin-top: 40px;">We'll be adding our detailed analyses to this
+                section soon. Stay tuned!</p>
+            <?php else: ?>
+
+            <?php foreach ($productos_filtrados as $indice => $prod): $enlace_afiliado = obtener_enlace_amazon($prod['asin']);
+    $foto_inicial = !empty($prod['imagenes']) ? $prod['imagenes'][0] : '/publicos/images/rampas/default.jpg';
+    $id_visor_unico = "visor-" . $indice;
+    ?>
+
+            <article class="producto-card">
+                <div class="galeria-amazon">
+                    <div class="miniaturas-col">
+                        <?php if (isset($prod['imagenes']) && count($prod['imagenes']) > 1): ?>
+                        <?php foreach ($prod['imagenes'] as $sub_indice => $img_url): ?>
+                        <img src="<?php echo htmlspecialchars($img_url); ?>"
+                            class="miniatura-img <?php echo $sub_indice === 0 ? 'activa' : ''; ?>"
+                            alt="Product view thumbnail"
+                            onclick="cambiarImagenGaleria(this, '<?php echo $id_visor_unico; ?>')">
+                        <?php endforeach; ?>
                         <?php endif; ?>
-
-                        <!-- TABLA DE PROS Y CONTRAS -->
-                        <?php if (!empty($prod['pros']) || !empty($prod['contras'])): ?>
-                            <div class="tabla-pros-contras">
-                                <ul class="col-pros">
-                                    <?php foreach (($prod['pros'] ?? []) as $pro): ?>
-                                        <li><?php echo htmlspecialchars($pro); ?></li>
-                                    <?php endforeach; ?>
-                                </ul>
-                                <ul class="col-contras">
-                                    <?php foreach (($prod['contras'] ?? []) as $contra): ?>
-                                        <li><?php echo htmlspecialchars($contra); ?></li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            </div>
-                        <?php endif; ?>
-
-                        <!-- BOTÓN LLAMATIVO CON TU ENLACE TIENDATEXASLL-20 -->
-                        <a href="<?php echo $enlace_afiliado; ?>" class="btn-ver-amazon" target="_blank" rel="noopener nofollow">
-                            Ver precio en Amazon →
-                        </a>
-                    </article>
-                    <?php endforeach; ?>
-                    <?php endif; ?>
-                    </main>
-
-                    <script src="/publicos/js/galeria.js"></script>
-
-                <p class="pick-note">Nota: Aodisman, EHEYCIGA y Ahpmeoa están diseñados para perros pequeños y medianos. PetSafe CozyUp es la opción premium con mejor marca reconocida, y Fecuria es la única de esta lista pensada para razas grandes.</p>
-
-                <h2>Cómo ayudar a tu perro a acostumbrarse a la rampa</h2>
-                <p>Aunque compres la rampa perfecta, muchos perros senior necesitan un periodo de adaptación. Colócala en un ángulo bajo primero, usa premios para animarlo a caminar sobre ella sin peso (con la rampa apoyada en el piso), y solo después practica con la inclinación real. Forzar a un perro asustado a usarla desde el primer día suele generar el efecto contrario: que la rechace por completo.</p>
-
-
-
-
-
-                <h2>¿Tu perro realmente necesita una rampa?</h2>
-                <p>No todos los perros senior la necesitan de inmediato, pero estas señales suelen indicar que ya es momento:</p>
-                <ul>
-                <li>Duda visiblemente antes de subir o bajar del sofá, cama o auto</li>
-                <li>Ha sido diagnosticado con displasia de cadera, artritis o problemas de columna</li>
-                <li>Es una raza grande o de espalda larga (como Basset Hound o Dachshund), propensa a lesiones al saltar</li>
-                <li>Se recuperó recientemente de una cirugía y necesita evitar impactos</li>
-                </ul>
-
-                <h2>Los 5 factores que realmente importan</h2>
-
-                <h3>1. Capacidad de peso</h3>
-                <p>Este es el error más común: comprar una rampa pensando solo en el tamaño del perro, sin revisar el peso máximo que soporta. Busca siempre un margen de al menos 20-30% por encima del peso real de tu perro, porque el peso dinámico al caminar genera más presión que el peso estático.</p>
-
-                <h3>2. Ángulo de inclinación</h3>
-                <p>Mientras más plano el ángulo, menos esfuerzo hace tu perro, pero más larga (y menos práctica) es la rampa. Para perros con artritis avanzada o problemas serios de columna, un ángulo suave es más importante que ahorrar espacio.</p>
-
-                <h3>3. Superficie antideslizante</h3>
-                <p>Un perro senior que resbala una vez en la rampa probablemente no vuelva a confiar en ella. Busca superficies con textura tipo alfombra o goma, no plástico liso, especialmente si la vas a usar en exteriores donde puede mojarse.</p>
-
-                <h3>4. Plegable y portátil, si la vas a mover</h3>
-                <p>Si planeas usarla para el auto y también en casa, el peso de la rampa y qué tan fácil se pliega importa tanto como el precio. Una rampa de 9 kg que no pliega bien se vuelve un mueble más, no una herramienta que realmente usas a diario.</p>
-
-                <h3>5. Estabilidad en los extremos</h3>
-                <p>Los mejores modelos tienen bordes elevados a los costados y una base que no se mueve al pisarla. Esto es clave para perros con visión reducida, algo muy común en la etapa senior.</p>
-
-                <div class="callout">
-                <b>Tip práctico:</b> antes de comprar, mide la altura exacta del lugar donde vas a usar la rampa (sofá, cama, cajuela del auto). La mayoría de las devoluciones ocurren porque la rampa resultó muy corta o muy empinada para ese espacio específico.
+                    </div>
+                    <div class="imagen-con-caption">
+                        <div class="imagen-principal-box">
+                            <h5>Illustrative photo</h5>
+                            <img id="<?php echo $id_visor_unico; ?>"
+                                src="<?php echo htmlspecialchars($foto_inicial); ?>"
+                                alt="<?php echo htmlspecialchars($prod['titulo']); ?>" loading="lazy">
+                        </div>
+                    </div>
                 </div>
 
-                <h2>Tabla rápida de referencia</h2>
-                <table>
-                <tr><th>Situación de tu perro</th><th>Qué priorizar</th></tr>
-                <tr><td>Artritis o dolor articular avanzado</td><td>Ángulo lo más plano posible</td></tr>
-                <tr><td>Raza grande (+25 kg)</td><td>Capacidad de peso alta + base ancha</td></tr>
-                <tr><td>Uso en auto/viajes</td><td>Ligera y plegable</td></tr>
-                <tr><td>Uso en exterior o zonas húmedas</td><td>Superficie antideslizante tipo goma</td></tr>
-                <tr><td>Perro con visión reducida</td><td>Bordes laterales elevados</td></tr>
-                </table>
+                <div class="producto-encabezado">
+                    <h3 class="producto-titulo"><?php echo htmlspecialchars($prod['titulo']); ?></h3>
+                    <?php if (!empty($prod['subtitulo'])): ?>
+                    <span class="badge-marca"><?php echo htmlspecialchars($prod['subtitulo']); ?></span>
+                    <?php endif; ?>
+                </div>
 
-                
-            </div>
-        </article>
+                <div class="meta-info">
+                    <span class="meta-precio"><?php echo htmlspecialchars($prod['precio']); ?></span>
+                    <span class="meta-resenas"><?php echo htmlspecialchars($prod['estrellas']); ?></span>
+                    <?php if (!empty($prod['capacidad'])): ?>
+                    <span class="meta-capacidad"><?php echo htmlspecialchars($prod['capacidad']); ?></span>
+                    <?php endif; ?>
+                </div>
 
-        <?php require_once 'footer.php'; ?>
+                <p class="resena-texto">
+                    <strong>Our analysis:</strong> <?php echo htmlspecialchars($prod['descripcion_corta']); ?>
+                </p>
 
-    </body>
-</html>
+                <?php if (!empty($prod['resena_larga'])): ?>
+                <p class="resena-texto"><?php echo htmlspecialchars($prod['resena_larga']); ?></p>
+                <?php endif; ?>
+
+                <?php if (!empty($prod['pros']) || !empty($prod['contras'])): ?>
+                <div class="tabla-pros-contras">
+                    <ul class="col-pros">
+                        <?php foreach (($prod['pros'] ?? []) as $pro): ?>
+                        <li><?php echo htmlspecialchars($pro); ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                    <ul class="col-contras">
+                        <?php foreach (($prod['contras'] ?? []) as $contra): ?>
+                        <li><?php echo htmlspecialchars($contra); ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+                <?php endif; ?>
+
+                <a href="<?php echo $enlace_afiliado; ?>" class="btn-ver-amazon" target="_blank"
+                    rel="noopener nofollow">
+                    See price on Amazon →
+                </a>
+            </article>
+            <?php endforeach; ?>
+            <?php endif; ?>
+        </main>
+        <script src="/publicos/js/galeria.js"></script>
+
+        <p class="pick-note">Note: Aodisman, EHEYCIGA, and Ahpmeoa are designed for small and medium dogs. PetSafe
+            CozyUp is the premium option with the most recognized brand, and Fecuria is the only one on this list
+            designed for large breeds.</p>
+
+        <h2>How to help your dog get used to the ramp</h2>
+
+        <p>Even if you buy the perfect ramp, many senior dogs need an adjustment period. Place it at a low angle first,
+            use treats to encourage it to walk on it without weight (with the ramp resting on the floor), and only then
+            practice with the real incline. Forcing a scared dog to use it from day one usually backfires: it will
+            reject it completely.</p>
+
+        <h2>Does your dog really need a ramp?</h2>
+
+        <p>Not all senior dogs need one right away, but these signs usually indicate it's time:</p>
+
+        <ul>
+            <li>Visibly hesitates before getting on or off the couch, bed, or car</li>
+            <li>Has been diagnosed with hip dysplasia, arthritis, or spine problems</li>
+            <li>Is a large or long-backed breed (like a Basset Hound or Dachshund), prone to jumping injuries</li>
+            <li>Recently recovered from surgery and needs to avoid impact</li>
+        </ul>
+
+        <h2>The 5 factors that really matter</h2>
+
+        <h3>1. Weight capacity</h3>
+
+        <p>This is the most common mistake: buying a ramp thinking only about the dog's size, without checking the
+            maximum weight it supports. Always look for a margin of at least 20-30% above your dog's actual weight,
+            because dynamic weight while walking creates more pressure than static weight.</p>
+
+        <h3>2. Incline angle</h3>
+
+        <p>The flatter the angle, the less effort your dog makes — but the longer (and less practical) the ramp is. For
+            dogs with advanced arthritis or serious spine problems, a gentle angle matters more than saving space.</p>
+
+        <h3>3. Non-slip surface</h3>
+
+        <p>A senior dog that slips once on the ramp will probably never trust it again. Look for carpet- or
+            rubber-textured surfaces, not smooth plastic — especially if you'll use it outdoors where it can get wet.
+        </p>
+
+        <h3>4. Foldable and portable, if you'll move it around</h3>
+
+        <p>If you plan to use it for the car and at home, the ramp's weight and how easily it folds matter as much as
+            the price. A 20 lb ramp that doesn't fold well becomes just another piece of furniture, not a tool you
+            actually use every day.</p>
+
+        <h3>5. Stability at the ends</h3>
+
+        <p>The best models have raised edges on the sides and a base that doesn't shift when stepped on. This is key for
+            dogs with reduced vision, which is very common in the senior stage.</p>
+
+        <div class="callout">
+            <b>Practical tip:</b> before buying, measure the exact height of where you'll use the ramp (couch, bed, car
+            trunk). Most returns happen because the ramp turned out too short or too steep for that specific space.
+        </div>
+
+        <h2>Quick reference table</h2>
+
+        <table>
+            <tr>
+                <th>Your dog's situation</th>
+                <th>What to prioritize</th>
+            </tr>
+            <tr>
+                <td>Advanced arthritis or joint pain</td>
+                <td>Flattest angle possible</td>
+            </tr>
+            <tr>
+                <td>Large breed (55+ lb)</td>
+                <td>High weight capacity + wide base</td>
+            </tr>
+            <tr>
+                <td>Car/travel use</td>
+                <td>Lightweight and foldable</td>
+            </tr>
+            <tr>
+                <td>Outdoor or wet-area use</td>
+                <td>Rubber-type non-slip surface</td>
+            </tr>
+            <tr>
+                <td>Dog with reduced vision</td>
+                <td>Raised side edges</td>
+            </tr>
+        </table>
+
+    </div>
+</article>
+
+<?php require_once __DIR__ . '/../footer.php'; ?>

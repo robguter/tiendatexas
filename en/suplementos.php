@@ -1,194 +1,213 @@
-        <?php
-            $categoria_filtrada = 'suplementos'; 
-            $meta_title = "Glucosamina y Condroitina para Perros Senior: Dosis y Marcas Confiables — Tienda Texas";
-            $meta_description = "¿Cuánta glucosamina y condroitina necesita tu perro senior? Dosis según su peso, qué dice la evidencia, y cómo elegir una marca confiable en Amazon.";
-            $canonical = "https://tiendatexasllc.com/suplementos.php";
+<?php
+    $categoria_filtrada = 'suplementos';
+    $pagina_tipo = 'guia';
+    $meta_title = "Glucosamine and Chondroitin for Senior Dogs: Dosage and Trusted Brands — Tienda Texas";
+    $meta_description = "How much glucosamine and chondroitin does your senior dog need? Dosage by weight, what the evidence says, and how to choose a trusted brand on Amazon.";
+    $canonical = "https://tiendatexasllc.com/en/suplementos.php";
 
-            // Carga de componentes centrales
-            $pagina_tipo = 'guia'; // Activa el CSS de productos en el header
-            require_once 'header.php';
-            require_once 'config.php'; 
-            
-            $json_path = 'productos.json';
-            if (!file_exists($json_path)) {
-                echo "<p class='contenedor-productos'>Error: The product file was not found.</p>";
-                exit;
-            }
+    require_once __DIR__ . '/../header.php';
+    require_once __DIR__ . '/../config.php';
+    $json_path = __DIR__ . '/../productos_en.json';
 
-            $json_data = file_get_contents($json_path);
-            $todos_los_productos = json_decode($json_data, true);
-            
-            $productos_filtrados = array_filter($todos_los_productos, function($p) use ($categoria_filtrada) {
-                return isset($p['categoria']) && $p['categoria'] === $categoria_filtrada;
-            });
-        ?>
+    if (!file_exists($json_path)) {
+        echo "<p class='contenedor-productos'>Error: The product file was not found.</p>";
+        exit;
+    }
 
-        <div class="article-head" style="background-image:linear-gradient(rgba(250,247,242,0.82), rgba(250,247,242,0.92)), url('https://images.unsplash.com/photo-1651777229439-beef9fda852f?fm=jpg&q=80&w=1400&auto=format&fit=crop'); background-size:cover; background-position:center;">
-        <div class="wrap-article">
-            <span class="kicker">Suplementos</span>
-            <h1>Glucosamina y Condroitina para Perros Senior: Dosis y Marcas Confiables. ¿Qué dice la evidencia realmente?</h1>
-            <p class="meta">Guía de compra · Actualizado 2026 · 8 min de lectura</p>
-        </div>
-        </div>
+    $json_data = file_get_contents($json_path);
+    $todos_los_productos = json_decode($json_data, true);
 
-        <div class="guide-banner">
-        <img src="/publicos/images/suplementos/suplementos_p10.webp" alt="Perro senior activo al aire libre">
-        </div>
+    $productos_filtrados = array_filter($todos_los_productos, function($p) use ($categoria_filtrada) {
+        return isset($p['categoria']) && $p['categoria'] === $categoria_filtrada;
+    });
+?>
 
-        <article>
-        <div class="wrap-article">
+<div class="article-head"
+    style="background-image:linear-gradient(rgba(250,247,242,0.82), rgba(250,247,242,0.92)), url('https://images.unsplash.com/photo-1651777229439-beef9fda852f?fm=jpg&q=80&w=1400&auto=format&fit=crop'); background-size:cover; background-position:center;">
+    <div class="wrap-article">
+        <span class="kicker">Supplements</span>
+        <h1><?php echo htmlspecialchars($meta_title); ?></h1>
+        <p class="meta">Buyer's Guide · Updated 2026 · 8 min read</p>
+    </div>
+</div>
 
-            <p>Si buscaste "suplemento articular para perros" alguna vez, probablemente viste decenas de productos prometiendo resultados casi milagrosos. La realidad es más matizada, y creemos que mereces conocerla antes de gastar tu dinero: la evidencia científica sobre glucosamina y condroitina en perros es <b>mixta</b>, no unánime. Algunos estudios muestran mejoría real, otros no encuentran diferencia frente a un placebo.</p>
+<div class="guide-banner">
+    <img src="/publicos/images/suplementos/suplementos_p10.webp" alt="Senior dog active outdoors">
+</div>
 
-            <p>Eso no significa que no valga la pena probarlo — significa que conviene entender qué esperar realmente, y cómo saber si está funcionando en tu perro específico, en vez de asumir que un bote con la palabra "articulaciones" en la etiqueta va a resolver todo.</p>
+<article>
+    <div class="wrap-article">
 
-            
-            <p>Estos productos cumplen nuestros criterios: dosis exacta declarada en mg, certificación NASC, y buen respaldo de reseñas reales. 
-            Los ordenamos por track record (número de reseñas), de mayor a menor.</p>
+        <p>If you've ever searched for "joint supplement for dogs," you've probably seen dozens of products promising
+            near-miraculous results. The reality is more nuanced, and we believe you deserve to know it before spending
+            your money: the scientific evidence on glucosamine and chondroitin in dogs is <b>mixed</b>, not unanimous.
+            Some studies show real improvement; others find no difference versus a placebo.</p>
 
-            
-            <main class="contenedor-productos">
-                <?php if (empty($productos_filtrados)): ?>
-                    <p style="text-align: center; color: #666; margin-top: 40px;">Próximamente añadiremos nuestros análisis detallados para esta sección. ¡Mantente atento!</p>
-                <?php else: ?>
-                <?php foreach ($productos_filtrados as $indice => $prod): 
-                    $enlace_afiliado = obtener_enlace_amazon($prod['asin']);
-                    $foto_inicial = !empty($prod['imagenes']) ? $prod['imagenes'][0] : '/publicos/images/suplementos/default.jpg';
-                    $id_visor_unico = "visor-" . $indice;
-                ?>
-                <!-- TARJETA DE PRODUCTO MODERNA -->
-                <article class="producto-card">
-                    
-                    <!-- GALERÍA ESTILO AMAZON -->
-                    <div class="galeria-amazon">
-                        <!-- Miniaturas laterales (Solo se dibujan si hay más de 1 imagen) -->
-                        <div class="miniaturas-col">
-                            <?php if (isset($prod['imagenes']) && count($prod['imagenes']) > 1): ?>
-                                <?php foreach ($prod['imagenes'] as $sub_indice => $img_url): ?>
-                                    <img src="<?php echo htmlspecialchars($img_url); ?>" 
-                                        class="miniatura-img <?php echo $sub_indice === 0 ? 'activa' : ''; ?>" 
-                                        alt="Miniatura de vista del producto"
-                                        onclick="cambiarImagenGaleria(this, '<?php echo $id_visor_unico; ?>')">
-                                <?php endforeach; ?>
-                            <?php endif; ?>
-                        </div>
-                
-                        <!-- Contenedor e Imagen Principal -->
-                        <div class="imagen-con-caption">
-                            <div class="imagen-principal-box">
-                                <h5>Foto ilustrativa</h5>
-                                <img id="<?php echo $id_visor_unico; ?>" 
-                                    src="<?php echo htmlspecialchars($foto_inicial); ?>" 
-                                    alt="<?php echo htmlspecialchars($prod['titulo']); ?>" 
-                                    loading="lazy">
-                            </div>
-                        </div>
+        <p>That doesn't mean it's not worth trying — it means it's worth understanding what to actually expect, and how
+            to tell whether it's working for your specific dog, instead of assuming a jar with the word "joints" on the
+            label will fix everything.</p>
 
-                    </div>
+        <p>These products meet our criteria: exact dose stated in mg, NASC certification, and strong backing from real
+            reviews. We've ordered them by track record (number of reviews), from highest to lowest.</p>
 
-                    <!-- ENCABEZADO E INFORMACIÓN -->
-                    <div class="producto-encabezado">
-                        <h3 class="producto-titulo"><?php echo htmlspecialchars($prod['titulo']); ?></h3>
-                        <?php if (!empty($prod['subtitulo'])): ?>
-                            <span class="badge-marca"><?php echo htmlspecialchars($prod['subtitulo']); ?></span>
+        <main class="contenedor-productos">
+
+            <?php if (empty($productos_filtrados)): ?>
+            <p style="text-align: center; color: #666; margin-top: 40px;">We'll be adding our detailed analyses to this
+                section soon. Stay tuned!</p>
+            <?php else: ?>
+
+            <?php foreach ($productos_filtrados as $indice => $prod): $enlace_afiliado = obtener_enlace_amazon($prod['asin']);
+$foto_inicial = !empty($prod['imagenes']) ? $prod['imagenes'][0] : '/publicos/images/suplementos/default.jpg';
+$id_visor_unico = "visor-" . $indice;
+?>
+            <article class="producto-card">
+                <div class="galeria-amazon">
+                    <div class="miniaturas-col">
+                        <?php if (isset($prod['imagenes']) && count($prod['imagenes']) > 1): ?>
+                        <?php foreach ($prod['imagenes'] as $sub_indice => $img_url): ?>
+                        <img src="<?php echo htmlspecialchars($img_url); ?>"
+                            class="miniatura-img <?php echo $sub_indice === 0 ? 'activa' : ''; ?>"
+                            alt="Product view thumbnail"
+                            onclick="cambiarImagenGaleria(this, '<?php echo $id_visor_unico; ?>')">
+                        <?php endforeach; ?>
                         <?php endif; ?>
                     </div>
-
-                    <div class="meta-info">
-                        <span class="meta-precio"><?php echo htmlspecialchars($prod['precio']); ?></span>
-                        <span class="meta-resenas"><?php echo htmlspecialchars($prod['estrellas']); ?></span>
-                        <?php if (!empty($prod['capacidad'])): ?>
-                            <span class="meta-capacidad"><?php echo htmlspecialchars($prod['capacidad']); ?></span>
-                        <?php endif; ?>
-                    </div>
-
-                    <p class="resena-texto">
-                        <strong>Nuestro análisis:</strong> <?php echo htmlspecialchars($prod['descripcion_corta']); ?>
-                    </p>
-                    
-                    <?php if (!empty($prod['resena_larga'])): ?>
-                        <p class="resena-texto"><?php echo htmlspecialchars($prod['resena_larga']); ?></p>
-                    <?php endif; ?>
-
-                    <!-- TABLA DE PROS Y CONTRAS -->
-                    <?php if (!empty($prod['pros']) || !empty($prod['contras'])): ?>
-                        <div class="tabla-pros-contras">
-                            <ul class="col-pros">
-                                <?php foreach (($prod['pros'] ?? []) as $pro): ?>
-                                    <li><?php echo htmlspecialchars($pro); ?></li>
-                                <?php endforeach; ?>
-                            </ul>
-                            <ul class="col-contras">
-                                <?php foreach (($prod['contras'] ?? []) as $contra): ?>
-                                    <li><?php echo htmlspecialchars($contra); ?></li>
-                                <?php endforeach; ?>
-                            </ul>
+                    <div class="imagen-con-caption">
+                        <div class="imagen-principal-box">
+                            <h5>Illustrative photo</h5>
+                            <img id="<?php echo $id_visor_unico; ?>"
+                                src="<?php echo htmlspecialchars($foto_inicial); ?>"
+                                alt="<?php echo htmlspecialchars($prod['titulo']); ?>" loading="lazy">
                         </div>
-                    <?php endif; ?>
+                    </div>
+                </div>
 
-                    <!-- BOTÓN LLAMATIVO CON TU ENLACE TIENDATEXASLL-20 -->
-                    <a href="<?php echo $enlace_afiliado; ?>" class="btn-ver-amazon" target="_blank" rel="noopener nofollow">
-                        Ver precio en Amazon →
-                    </a>
-                </article>
-                <?php endforeach; ?>
+                <div class="producto-encabezado">
+                    <h3 class="producto-titulo"><?php echo htmlspecialchars($prod['titulo']); ?></h3>
+                    <?php if (!empty($prod['subtitulo'])): ?>
+                    <span class="badge-marca"><?php echo htmlspecialchars($prod['subtitulo']); ?></span>
+                    <?php endif; ?>
+                </div>
+
+                <div class="meta-info">
+                    <span class="meta-precio"><?php echo htmlspecialchars($prod['precio']); ?></span>
+                    <span class="meta-resenas"><?php echo htmlspecialchars($prod['estrellas']); ?></span>
+                    <?php if (!empty($prod['capacidad'])): ?>
+                    <span class="meta-capacidad"><?php echo htmlspecialchars($prod['capacidad']); ?></span>
+                    <?php endif; ?>
+                </div>
+
+                <p class="resena-texto">
+                    <strong>Our analysis:</strong> <?php echo htmlspecialchars($prod['descripcion_corta']); ?>
+                </p>
+
+                <?php if (!empty($prod['resena_larga'])): ?>
+                <p class="resena-texto"><?php echo htmlspecialchars($prod['resena_larga']); ?></p>
                 <?php endif; ?>
-            </main>
 
-            <script src="/publicos/js/galeria.js"></script>
+                <?php if (!empty($prod['pros']) || !empty($prod['contras'])): ?>
+                <div class="tabla-pros-contras">
+                    <ul class="col-pros">
+                        <?php foreach (($prod['pros'] ?? []) as $pro): ?>
+                        <li><?php echo htmlspecialchars($pro); ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                    <ul class="col-contras">
+                        <?php foreach (($prod['contras'] ?? []) as $contra): ?>
+                        <li><?php echo htmlspecialchars($contra); ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+                <?php endif; ?>
 
+                <a href="<?php echo $enlace_afiliado; ?>" class="btn-ver-amazon" target="_blank"
+                    rel="noopener nofollow">
+                    See price on Amazon →
+                </a>
+            </article>
+            <?php endforeach; ?>
+            <?php endif; ?>
+        </main>
+        <script src="/publicos/js/galeria.js"></script>
 
-            <h2>Qué dice la evidencia científica</h2>
-            <p>Varios ensayos clínicos en perros con osteoartritis han probado combinaciones de glucosamina y condroitina. Los resultados no son consistentes entre estudios:</p>
-            <ul>
-            <li><b>A favor:</b> un ensayo publicado mostró mejoras estadísticamente significativas en dolor, apoyo de peso y severidad de la condición después de 70 días de tratamiento, comparado con placebo.</li>
-            <li><b>En contra:</b> otro ensayo controlado con 23 perros no encontró ninguna mejora medible frente a placebo, usando mediciones objetivas de fuerza al caminar.</li>
-            <li><b>Contexto importante:</b> una revisión sistemática de estudios en animales concluyó que la evidencia sigue siendo "controversial" — algunos perros responden bien, otros no muestran cambio alguno.</li>
-            </ul>
+        <h2>What the scientific evidence says</h2>
 
-            <div class="callout">
-            <b>Lo que esto significa en la práctica:</b> a pesar de la evidencia mixta, veterinarios siguen recomendando estos suplementos con frecuencia, principalmente porque el perfil de riesgo es muy bajo (pocos efectos secundarios, generalmente solo indigestión leve) comparado con antiinflamatorios de uso prolongado. Es una apuesta de bajo riesgo, no una garantía.
-            </div>
+        <p>Several clinical trials in dogs with osteoarthritis have tested glucosamine and chondroitin combinations.
+            Results are not consistent across studies:</p>
 
-            <h2>¿Cuánto tiempo hay que esperar para ver resultados?</h2>
-            <p>Este es un punto que casi ningún vendedor menciona: en los estudios donde sí hubo mejoría, el efecto tardó entre <b>42 y 70 días</b> en notarse — no es un suplemento de efecto inmediato como un analgésico. Si le das el suplemento a tu perro por dos semanas y no ves cambio, todavía es demasiado pronto para concluir que no funciona.</p>
+        <ul>
+            <li><b>In favor:</b> one published trial showed statistically significant improvements in pain, weight
+                bearing, and condition severity after 70 days of treatment, compared with placebo.</li>
+            <li><b>Against:</b> another controlled trial with 23 dogs found no measurable improvement versus placebo,
+                using objective gait force measurements.</li>
+            <li><b>Important context:</b> a systematic review of animal studies concluded the evidence remains
+                "controversial" — some dogs respond well, others show no change at all.</li>
+        </ul>
 
-            <h2>Qué buscar al elegir un producto</h2>
-
-            <h3>1. Dosis real, no solo presencia del ingrediente</h3>
-            <p>Muchos productos económicos incluyen glucosamina y condroitina en cantidades tan bajas que es poco probable que tengan efecto clínico real. Como referencia general (consulta siempre con tu veterinario para la dosis exacta según el peso de tu perro), busca productos que especifiquen claramente los miligramos por porción, no solo que "contiene" el ingrediente.</p>
-
-            <h3>2. Forma de administración que tu perro realmente tome</h3>
-            <p>El mejor suplemento del mundo no sirve si tu perro escupe la pastilla cada vez. Existen en polvo (se mezcla con la comida), masticables con sabor, y líquido. Si ya sabes que tu perro es difícil con pastillas, prioriza masticables o polvo desde el inicio en vez de pelear con el formato equivocado.</p>
-
-            <h3>3. Certificación de calidad</h3>
-            <p>A diferencia de los medicamentos, los suplementos no están tan regulados. Busca sellos como NASC (National Animal Supplement Council) cuando estén disponibles — es una señal de que el fabricante sigue buenas prácticas de manufactura, aunque no garantiza eficacia clínica.</p>
-
-            <h3>4. Ingredientes adicionales con más evidencia propia</h3>
-            <p>Algunos productos combinan glucosamina/condroitina con MSM (metilsulfonilmetano) o ácidos grasos omega-3. Los omega-3 en particular tienen evidencia algo más consistente para reducir inflamación articular, así que un producto que los incluya puede ofrecer valor adicional más allá de la glucosamina sola.</p>
-
-            <h2>Señales de que SÍ está funcionando</h2>
-            <p>Después de al menos 6-8 semanas de uso constante, observa si notas:</p>
-            <ul>
-            <li>Menos rigidez al levantarse después de dormir</li>
-            <li>Más disposición a subir escaleras o saltar (dentro de lo razonable para su edad)</li>
-            <li>Cojera menos frecuente o menos marcada durante los paseos</li>
-            </ul>
-            <p>Si después de 2-3 meses no ves ningún cambio, es razonable asumir que este suplemento en particular no está teniendo efecto en tu perro — vale la pena hablarlo con tu veterinario antes de seguir comprándolo por costumbre.</p>
-            
-            
-
-            
-            <p class="pick-note">Nota: la condroitina en Vet's Best Advanced (50mg) es notablemente menor que en Cosequin (300mg) o PetNC (100mg). Si la condroitina es tu prioridad principal, Cosequin o PetNC son mejores opciones.</p>
-
-            <div class="callout">
-            <b>Importante:</b> este contenido es informativo, no reemplaza el consejo de un veterinario. Antes de empezar cualquier suplemento nuevo, especialmente si tu perro toma otros medicamentos, consulta con tu veterinario la dosis adecuada para su peso y condición específica.
-            </div>
-
+        <div class="callout">
+            <b>What this means in practice:</b> despite the mixed evidence, veterinarians still frequently recommend
+            these supplements, mainly because the risk profile is very low (few side effects, usually just mild
+            indigestion) compared with long-term anti-inflammatories. It's a low-risk bet, not a guarantee.
         </div>
-        </article>
 
-        <?php require_once 'footer.php'; ?>
+        <h2>How long should you wait to see results?</h2>
 
-    </body>
-</html>
+        <p>This is a point almost no seller mentions: in the studies where improvement did occur, the effect took
+            between <b>42 and 70 days</b> to become noticeable — this is not a fast-acting supplement like a painkiller.
+            If you give your dog the supplement for two weeks and see no change, it's still too early to conclude it
+            doesn't work.</p>
+
+        <h2>What to look for when choosing a product</h2>
+
+        <h3>1. Real dose, not just ingredient presence</h3>
+
+        <p>Many budget products include glucosamine and chondroitin in amounts so low they're unlikely to have any real
+            clinical effect. As a general reference (always check with your vet for the exact dose for your dog's
+            weight), look for products that clearly state milligrams per serving — not just that they "contain" the
+            ingredient.</p>
+
+        <h3>2. A delivery format your dog will actually take</h3>
+
+        <p>The best supplement in the world is useless if your dog spits out the pill every time. They come as powder
+            (mixes into food), flavored chews, and liquid. If you already know your dog is difficult with pills,
+            prioritize chews or powder from the start instead of fighting the wrong format.</p>
+
+        <h3>3. Quality certification</h3>
+
+        <p>Unlike medications, supplements aren't as tightly regulated. Look for seals like NASC (National Animal
+            Supplement Council) when available — it's a sign the manufacturer follows good manufacturing practices,
+            though it doesn't guarantee clinical efficacy.</p>
+
+        <h3>4. Additional ingredients with their own evidence</h3>
+
+        <p>Some products combine glucosamine/chondroitin with MSM (methylsulfonylmethane) or omega-3 fatty acids.
+            Omega-3s in particular have somewhat more consistent evidence for reducing joint inflammation, so a product
+            that includes them may offer added value beyond glucosamine alone.</p>
+
+        <h2>Signs it IS working</h2>
+
+        <p>After at least 6–8 weeks of consistent use, watch for:</p>
+
+        <ul>
+            <li>Less stiffness when getting up after sleeping</li>
+            <li>More willingness to climb stairs or jump (within reason for their age)</li>
+            <li>Less frequent or less pronounced limping during walks</li>
+        </ul>
+
+        <p>If after 2–3 months you see no change at all, it's reasonable to assume this particular supplement isn't
+            having an effect on your dog — worth discussing with your vet before continuing to buy it out of habit.</p>
+
+        <p class="pick-note">Note: the chondroitin in Vet's Best Advanced (50mg) is notably lower than in Cosequin
+            (300mg) or PetNC (100mg). If chondroitin is your main priority, Cosequin or PetNC are better options.</p>
+
+        <div class="callout">
+            <b>Important:</b> this content is informational and does not replace your veterinarian's advice. Before
+            starting any new supplement, especially if your dog takes other medications, check with your vet for the
+            right dose for their weight and specific condition.
+        </div>
+
+    </div>
+</article>
+
+<?php require_once __DIR__ . '/../footer.php'; ?>

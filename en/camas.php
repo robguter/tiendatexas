@@ -1,183 +1,214 @@
-        <?php
-            $categoria_filtrada = 'camas'; 
-            $meta_title = "La Mejor Cama Ortopédica para Perros Mayores y con Displasia de Cadera — Tienda Texas";
-            $meta_description = "Comparamos las mejores camas ortopédicas para perros mayores, incluyendo displasia de cadera: qué densidad de espuma buscar y cuándo vale la pena pagar más.";
-            $canonical = "https://tiendatexasllc.com/camas.php";
-            
-            $pagina_tipo = 'guia';
-            require_once 'header.php';
-            require_once 'config.php';
-            
-            $json_path = 'productos.json';
-            if (!file_exists($json_path)) {
-                echo "<p class='contenedor-productos'>Error: The product file was not found.</p>";
-                exit;
-            }
+<?php
+    $categoria_filtrada = 'camas';
+    $pagina_tipo = 'guia';
+    $meta_title = "Best orthopedic bed for senior dogs and hip dysplasia — Tienda Texas";
+    $meta_description = "We compare the best orthopedic beds for senior dogs, including hip dysplasia: what foam density to look for and when it's worth paying more.";
+    $canonical = "https://tiendatexasllc.com/en/camas.php";
 
-            $json_data = file_get_contents($json_path);
-            $todos_los_productos = json_decode($json_data, true);
-            
-            $productos_filtrados = array_filter($todos_los_productos, function($p) use ($categoria_filtrada) {
-                return isset($p['categoria']) && $p['categoria'] === $categoria_filtrada;
-            });
-        ?>
+    require_once __DIR__ . '/../header.php';
+    require_once __DIR__ . '/../config.php';
+    $json_path = __DIR__ . '/../productos_en.json';
 
-        <div class="article-head" style="background-image:linear-gradient(rgba(250,247,242,0.82), rgba(250,247,242,0.92)), url('https://images.unsplash.com/photo-1642303009699-7d7fd6d4a243?fm=jpg&q=80&w=1400&auto=format&fit=crop'); background-size:cover; background-position:center;">
-        <div class="wrap-article">
-            <span class="kicker">Descanso</span>
-            <h1>Camas ortopédicas para perros senior (o "mayores"): cuáles son las mejores</h1>
-            <p class="meta">Guía de compra · Actualizado 2026 · 7 min de lectura</p>
-        </div>
-        </div>
+    if (!file_exists($json_path)) {
+        echo "<p class='contenedor-productos'>Error: The product file was not found.</p>";
+        exit;
+    }
 
-        <div class="guide-banner">
-        <img src="/publicos/images/camas/camas_p1.webp" alt="Perro descansando en cama para mascotas">
-        </div>
+    $json_data = file_get_contents($json_path);
+    $todos_los_productos = json_decode($json_data, true);
 
-        <article>
-        <div class="wrap-article">
+    $productos_filtrados = array_filter($todos_los_productos, function($p) use ($categoria_filtrada) {
+        return isset($p['categoria']) && $p['categoria'] === $categoria_filtrada;
+    });
+?>
 
-            <p>Un perro senior —o mayor, como también se le conoce— puede pasar entre 16 y 20 horas al día descansando. Eso significa que la cama donde duerme no es un accesorio más: es probablemente el objeto que más tiempo toca su cuerpo, todos los días. Y sin embargo, es de lo último en lo que la mayoría de los dueños piensa al hacer ajustes para la vejez de su perro.</p>
+<div class="article-head"
+    style="background-image:linear-gradient(rgba(250,247,242,0.82), rgba(250,247,242,0.92)), url('https://images.unsplash.com/photo-1642303009699-7d7fd6d4a243?fm=jpg&q=80&w=1400&auto=format&fit=crop'); background-size:cover; background-position:center;">
+    <div class="wrap-article">
+        <span class="kicker">Rest</span>
+        <h1>Orthopedic beds for senior dogs: which ones are the best</h1>
+        <p class="meta">Buyer's Guide · Updated 2026 · 7 min read</p>
+    </div>
+</div>
 
-            <p>La diferencia entre una cama cualquiera y una cama ortopédica real no está en el marketing, está en la densidad de la espuma y cómo distribuye el peso del cuerpo. Aquí te explico qué mirar para no pagar de más por una cama "ortopédica" que en realidad no lo es.</p>
+<div class="guide-banner">
+    <img src="/publicos/images/camas/camas_p1.webp" alt="Dog resting on a pet bed">
+</div>
 
-            
-            
-            <main class="contenedor-productos">
+<article>
+    <div class="wrap-article">
+
+        <p>A senior dog can spend between 16 and 20 hours a day resting. That means the bed it sleeps on isn't just
+            another accessory: it's probably the object that touches its body the longest, every single day. And yet,
+            it's one of the last things most owners think about when adjusting for their dog's old age.</p>
+
+        <p>The difference between just any bed and a real orthopedic bed isn't in the marketing — it's in the foam
+            density and how it distributes body weight. Here I explain what to look for so you don't overpay for an
+            "orthopedic" bed that really isn't one.</p>
+
+        <main class="contenedor-productos">
+
             <?php if (empty($productos_filtrados)): ?>
-                <p style="text-align: center; color: #666; margin-top: 40px;">Próximamente añadiremos nuestros análisis detallados para esta sección. ¡Mantente atento!</p>
+            <p style="text-align: center; color: #666; margin-top: 40px;">We'll be adding our detailed analyses to this
+                section soon. Stay tuned!</p>
             <?php else: ?>
-            <?php foreach ($productos_filtrados as $indice => $prod): 
-                $enlace_afiliado = obtener_enlace_amazon($prod['asin']); 
-                // Usamos la primera imagen de la lista como foto inicial por defecto
-                $foto_inicial = !empty($prod['imagenes']) ? $prod['imagenes'][0] : '/publicos/images/camas/default.jpg';
-                $id_visor_unico = "visor-" . $indice;
-            ?>
-                <!-- TARJETA DE PRODUCTO MODERNA -->
-                <article class="producto-card">
-                    
-                    <!-- GALERÍA ESTILO AMAZON -->
-                    <div class="galeria-amazon">
-                        <!-- Miniaturas laterales (Solo se dibujan si hay más de 1 imagen) -->
-                        <div class="miniaturas-col">
-                            <?php if (isset($prod['imagenes']) && count($prod['imagenes']) > 1): ?>
-                                <?php foreach ($prod['imagenes'] as $sub_indice => $img_url): ?>
-                                    <img src="<?php echo htmlspecialchars($img_url); ?>" 
-                                        class="miniatura-img <?php echo $sub_indice === 0 ? 'activa' : ''; ?>" 
-                                        alt="Miniatura de vista del producto"
-                                        onclick="cambiarImagenGaleria(this, '<?php echo $id_visor_unico; ?>')">
-                                <?php endforeach; ?>
-                            <?php endif; ?>
-                        </div>
-                            
-                        <div class="imagen-con-caption">
-                            <div class="imagen-principal-box">
-                                <h5>Foto ilustrativa</h5>
-                                <img id="<?php echo $id_visor_unico; ?>" 
-                                    src="<?php echo htmlspecialchars($foto_inicial); ?>" 
-                                    alt="<?php echo htmlspecialchars($prod['titulo']); ?>" 
-                                    loading="lazy">
-                            </div>
-                        </div>
 
-                    </div>
+            <?php foreach ($productos_filtrados as $indice => $prod): $enlace_afiliado = obtener_enlace_amazon($prod['asin']);
+$foto_inicial = !empty($prod['imagenes']) ? $prod['imagenes'][0] : '/publicos/images/camas/default.jpg';
+$id_visor_unico = "visor-" . $indice;
+?>
 
-                    <!-- ENCABEZADO E INFORMACIÓN -->
-                    <div class="producto-encabezado">
-                        <h3 class="producto-titulo"><?php echo htmlspecialchars($prod['titulo']); ?></h3>
-                        <?php if (!empty($prod['subtitulo'])): ?>
-                            <span class="badge-marca"><?php echo htmlspecialchars($prod['subtitulo']); ?></span>
+            <article class="producto-card">
+                <div class="galeria-amazon">
+                    <div class="miniaturas-col">
+                        <?php if (isset($prod['imagenes']) && count($prod['imagenes']) > 1): ?>
+                        <?php foreach ($prod['imagenes'] as $sub_indice => $img_url): ?>
+                        <img src="<?php echo htmlspecialchars($img_url); ?>"
+                            class="miniatura-img <?php echo $sub_indice === 0 ? 'activa' : ''; ?>"
+                            alt="Product view thumbnail"
+                            onclick="cambiarImagenGaleria(this, '<?php echo $id_visor_unico; ?>')">
+                        <?php endforeach; ?>
                         <?php endif; ?>
                     </div>
-
-                    <div class="meta-info">
-                        <span class="meta-precio"><?php echo htmlspecialchars($prod['precio']); ?></span>
-                        <span class="meta-resenas"><?php echo htmlspecialchars($prod['estrellas']); ?></span>
-                        <?php if (!empty($prod['capacidad'])): ?>
-                            <span class="meta-capacidad"><?php echo htmlspecialchars($prod['capacidad']); ?></span>
-                        <?php endif; ?>
-                    </div>
-
-                    <p class="resena-texto">
-                        <strong>Nuestro análisis:</strong> <?php echo htmlspecialchars($prod['descripcion_corta']); ?>
-                    </p>
-                    
-                    <?php if (!empty($prod['resena_larga'])): ?>
-                        <p class="resena-texto"><?php echo htmlspecialchars($prod['resena_larga']); ?></p>
-                    <?php endif; ?>
-
-                    <!-- TABLA DE PROS Y CONTRAS -->
-                    <?php if (!empty($prod['pros']) || !empty($prod['contras'])): ?>
-                        <div class="tabla-pros-contras">
-                            <ul class="col-pros">
-                                <?php foreach (($prod['pros'] ?? []) as $pro): ?>
-                                    <li><?php echo htmlspecialchars($pro); ?></li>
-                                <?php endforeach; ?>
-                            </ul>
-                            <ul class="col-contras">
-                                <?php foreach (($prod['contras'] ?? []) as $contra): ?>
-                                    <li><?php echo htmlspecialchars($contra); ?></li>
-                                <?php endforeach; ?>
-                            </ul>
+                    <div class="imagen-con-caption">
+                        <div class="imagen-principal-box">
+                            <h5>Illustrative photo</h5>
+                            <img id="<?php echo $id_visor_unico; ?>"
+                                src="<?php echo htmlspecialchars($foto_inicial); ?>"
+                                alt="<?php echo htmlspecialchars($prod['titulo']); ?>" loading="lazy">
                         </div>
-                    <?php endif; ?>
+                    </div>
+                </div>
 
-                    <!-- BOTÓN LLAMATIVO CON TU ENLACE TIENDATEXASLL-20 -->
-                    <a href="<?php echo $enlace_afiliado; ?>" class="btn-ver-amazon" target="_blank" rel="noopener nofollow">
-                        Ver precio en Amazon →
-                    </a>
-                </article>
-                <?php endforeach; ?>
+                <div class="producto-encabezado">
+                    <h3 class="producto-titulo"><?php echo htmlspecialchars($prod['titulo']); ?></h3>
+                    <?php if (!empty($prod['subtitulo'])): ?>
+                    <span class="badge-marca"><?php echo htmlspecialchars($prod['subtitulo']); ?></span>
+                    <?php endif; ?>
+                </div>
+
+                <div class="meta-info">
+                    <span class="meta-precio"><?php echo htmlspecialchars($prod['precio']); ?></span>
+                    <span class="meta-resenas"><?php echo htmlspecialchars($prod['estrellas']); ?></span>
+                    <?php if (!empty($prod['capacidad'])): ?>
+                    <span class="meta-capacidad"><?php echo htmlspecialchars($prod['capacidad']); ?></span>
+                    <?php endif; ?>
+                </div>
+
+                <p class="resena-texto">
+                    <strong>Our analysis:</strong> <?php echo htmlspecialchars($prod['descripcion_corta']); ?>
+                </p>
+
+                <?php if (!empty($prod['resena_larga'])): ?>
+                <p class="resena-texto"><?php echo htmlspecialchars($prod['resena_larga']); ?></p>
                 <?php endif; ?>
-            </main>
 
-            <script src="/publicos/js/galeria.js"></script>
+                <?php if (!empty($prod['pros']) || !empty($prod['contras'])): ?>
+                <div class="tabla-pros-contras">
+                    <ul class="col-pros">
+                        <?php foreach (($prod['pros'] ?? []) as $pro): ?>
+                        <li><?php echo htmlspecialchars($pro); ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                    <ul class="col-contras">
+                        <?php foreach (($prod['contras'] ?? []) as $contra): ?>
+                        <li><?php echo htmlspecialchars($contra); ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+                <?php endif; ?>
 
+                <a href="<?php echo $enlace_afiliado; ?>" class="btn-ver-amazon" target="_blank"
+                    rel="noopener nofollow">
+                    See price on Amazon →
+                </a>
+            </article>
+            <?php endforeach; ?>
+            <?php endif; ?>
+        </main>
+        <script src="/publicos/js/galeria.js"></script>
 
-            <h2>¿Por qué importa tanto en perros senior?</h2>
-            <p>Con la edad, los perros pierden masa muscular y grasa protectora sobre huesos y articulaciones. Una cama demasiado blanda o delgada hace que las caderas, codos y hombros presionen directo contra el piso a través del relleno, generando puntos de presión que pueden derivar en callos, e incluso agravar dolor articular existente, como el que produce la displasia de cadera o la artritis.</p>
+        <h2>Why does it matter so much for senior dogs?</h2>
 
-            <h2>Los 4 factores que separan una cama real de una que solo lo parece</h2>
+        <p>With age, dogs lose muscle mass and protective fat over bones and joints. A bed that's too soft or thin lets
+            hips, elbows, and shoulders press straight through the filling against the floor, creating pressure points
+            that can lead to calluses and even worsen existing joint pain, like that caused by hip dysplasia or
+            arthritis.</p>
 
-            <h3>1. Espuma de memoria de alta densidad, no espuma común</h3>
-            <p>Aquí está el truco de marketing más común: muchas camas dicen "ortopédica" solo porque usan espuma suave, no porque use espuma de memoria de densidad real (idealmente 4-5 lb/ft³ o más). La espuma común se comprime rápido y pierde soporte en pocos meses; la de alta densidad mantiene su forma por años.</p>
+        <h2>The 4 factors that separate a real bed from one that only looks like it</h2>
 
-            <h3>2. Grosor mínimo de 4 pulgadas para perros medianos y grandes</h3>
-            <p>Una capa delgada de espuma sobre una base plana no ofrece soporte real. Para razas medianas y grandes, busca al menos 4 pulgadas (10 cm) de espuma; para razas pequeñas, 2-3 pulgadas suele ser suficiente.</p>
+        <h3>1. High-density memory foam, not regular foam</h3>
 
-            <h3>3. Funda removible y lavable</h3>
-            <p>Los perros senior son más propensos a accidentes (incontinencia, vómito, etc.). Una funda con cierre que se pueda quitar y lavar en máquina no es un lujo, es prácticamente obligatorio para mantener la cama higiénica a largo plazo.</p>
+        <p>Here's the most common marketing trick: many beds say "orthopedic" just because they use soft foam, not
+            because they use real high-density memory foam (ideally 4-5 lb/ft³ or more). Regular foam compresses quickly
+            and loses support within months; high-density foam keeps its shape for years.</p>
 
-            <h3>4. Base antideslizante</h3>
-            <p>Un perro con movilidad reducida que empuja con las patas para acomodarse puede terminar moviendo la cama por todo el piso si no tiene una base de goma antideslizante. Esto es especialmente importante en pisos de madera o cerámica.</p>
+        <h3>2. Minimum 4-inch thickness for medium and large dogs</h3>
 
-            <div class="callout">
-            <b>Señal de alerta:</b> si una cama se anuncia como "ortopédica" pero no menciona la densidad de la espuma en ningún lado de la descripción, es una bandera roja. Las marcas que sí usan espuma de calidad casi siempre lo destacan como argumento de venta.
-            </div>
+        <p>A thin layer of foam over a flat base doesn't offer real support. For medium and large breeds, look for at
+            least 4 inches of foam; for small breeds, 2-3 inches is usually enough.</p>
 
-            <h2>¿Qué tamaño elegir?</h2>
-            <table>
-            <tr><th>Situación</th><th>Recomendación</th></tr>
-            <tr><td>Perro que duerme estirado por completo</td><td>Cama 8-10 cm más larga que su cuerpo extendido</td></tr>
-            <tr><td>Perro con artritis o displasia de cadera</td><td>Espuma de memoria de mayor densidad, prioridad sobre el tamaño</td></tr>
-            <tr><td>Espacios reducidos o departamentos</td><td>Modelos con bordes bajos, más fáciles de acomodar en esquinas</td></tr>
-            <tr><td>Perros que rascan antes de acostarse</td><td>Funda reforzada, resistente a enganches</td></tr>
-            </table>
+        <h3>3. Removable, washable cover</h3>
 
-            <div class="callout">
-            <b>Algo que descubrimos investigando esto:</b> en el rango de $30-50, prácticamente todo el mercado usa espuma tipo "egg-crate" (huevera), no espuma de memoria sólida. La espuma de memoria sólida real, la que da mejor soporte para artritis avanzada, suele empezar arriba de los $200. No es que las opciones económicas sean malas — cumplen bien para la mayoría de los casos — pero si tu perro tiene dolor articular severo, como el que produce una displasia de cadera diagnosticada, vale la pena considerar el salto de precio.
-            </div>
+        <p>Senior dogs are more prone to accidents (incontinence, vomiting, etc.). A zippered cover you can remove and
+            machine-wash isn't a luxury — it's practically mandatory to keep the bed hygienic long-term.</p>
 
-            
-            <p class="pick-note">Nota: las 3 primeras opciones (económicas) cubren bien la mayoría de los casos de perros senior sanos o con molestias leves. Las 2 opciones premium tienen sentido cuando el perro tiene un diagnóstico de artritis o displasia moderada a severa, donde la calidad de la espuma hace una diferencia real y sostenida en el tiempo.</p>
+        <h3>4. Non-slip base</h3>
 
-            <h2>Un detalle que casi nadie menciona: la ubicación</h2>
-            <p>Incluso la mejor cama ortopédica pierde efectividad si está en un lugar con corriente de aire frío o lejos de donde tu perro pasa el resto del tiempo. Los perros senior regulan peor su temperatura corporal, así que ubicar la cama en una zona templada de la casa, alejada de puertas o ventanas, complementa el soporte físico que ya te da la cama en sí.</p>
+        <p>A dog with reduced mobility that pushes with its paws to get comfortable can end up sliding the bed all over
+            the floor if it doesn't have a non-slip rubber base. This is especially important on wood or ceramic floors.
+        </p>
 
+        <div class="callout">
+            <b>Red flag:</b> if a bed is advertised as "orthopedic" but doesn't mention foam density anywhere in the
+            description, that's a red flag. Brands that do use quality foam almost always highlight it as a selling
+            point.
         </div>
-        </article>
 
-        <?php require_once 'footer.php'; ?>
+        <h2>What size should you choose?</h2>
 
-    </body>
-</html>
+        <table>
+            <tr>
+                <th>Situation</th>
+                <th>Recommendation</th>
+            </tr>
+            <tr>
+                <td>Dog that sleeps fully stretched out</td>
+                <td>Bed 3-4 inches longer than its stretched-out body</td>
+            </tr>
+            <tr>
+                <td>Dog with arthritis or hip dysplasia</td>
+                <td>Higher-density memory foam — priority over size</td>
+            </tr>
+            <tr>
+                <td>Small spaces or apartments</td>
+                <td>Low-sided models, easier to fit in corners</td>
+            </tr>
+            <tr>
+                <td>Dogs that scratch before lying down</td>
+                <td>Reinforced, snag-resistant cover</td>
+            </tr>
+        </table>
+
+        <div class="callout">
+            <b>Something we discovered researching this:</b> in the $30-50 range, practically the entire market uses
+            "egg-crate" foam, not solid memory foam. Real solid memory foam — the kind that gives the best support for
+            advanced arthritis — usually starts above $200. It's not that the budget options are bad — they work well
+            for most cases — but if your dog has severe joint pain, like that from diagnosed hip dysplasia, the price
+            jump is worth considering.
+        </div>
+
+        <p class="pick-note">Note: the first 3 (budget) options cover most cases of healthy senior dogs or those with
+            mild discomfort well. The 2 premium options make sense when the dog has a diagnosis of moderate to severe
+            arthritis or dysplasia, where foam quality makes a real, lasting difference.</p>
+
+        <h2>A detail almost nobody mentions: placement</h2>
+
+        <p>Even the best orthopedic bed loses effectiveness if it's in a cold draft or far from where your dog spends
+            the rest of its time. Senior dogs regulate body temperature worse, so placing the bed in a warm area of the
+            house, away from doors or windows, complements the physical support the bed itself gives.</p>
+
+    </div>
+</article>
+
+<?php require_once __DIR__ . '/../footer.php'; ?>

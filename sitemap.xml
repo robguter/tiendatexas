@@ -1,62 +1,185 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Español (raíz) -->
   <url>
-    <loc>https://tiendatexasllc.com</loc>
+    <loc>https://tiendatexasllc.com/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tiendatexasllc.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tiendatexasllc.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tiendatexasllc.com/en/"/>
     <lastmod>2026-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://tiendatexasllc.com/rampas.php</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tiendatexasllc.com/rampas.php"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tiendatexasllc.com/en/rampas.php"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tiendatexasllc.com/en/rampas.php"/>
     <lastmod>2026-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tiendatexasllc.com/camas.php</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tiendatexasllc.com/camas.php"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tiendatexasllc.com/en/camas.php"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tiendatexasllc.com/en/camas.php"/>
     <lastmod>2026-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tiendatexasllc.com/suplementos.php</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tiendatexasllc.com/suplementos.php"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tiendatexasllc.com/en/suplementos.php"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tiendatexasllc.com/en/suplementos.php"/>
     <lastmod>2026-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tiendatexasllc.com/arnes.php</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tiendatexasllc.com/arnes.php"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tiendatexasllc.com/en/arnes.php"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tiendatexasllc.com/en/arnes.php"/>
     <lastmod>2026-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tiendatexasllc.com/alfombras.php</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tiendatexasllc.com/alfombras.php"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tiendatexasllc.com/en/alfombras.php"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tiendatexasllc.com/en/alfombras.php"/>
     <lastmod>2026-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tiendatexasllc.com/halloween.php</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tiendatexasllc.com/halloween.php"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tiendatexasllc.com/en/halloween.php"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tiendatexasllc.com/en/halloween.php"/>
     <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tiendatexasllc.com/contacto.php</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tiendatexasllc.com/contacto.php"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tiendatexasllc.com/en/contacto.php"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tiendatexasllc.com/en/contacto.php"/>
     <lastmod>2026-09-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://tiendatexasllc.com/privacidad.php</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tiendatexasllc.com/privacidad.php"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tiendatexasllc.com/en/privacidad.php"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tiendatexasllc.com/en/privacidad.php"/>
     <lastmod>2026-09-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://tiendatexasllc.com/terminos.php</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tiendatexasllc.com/terminos.php"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tiendatexasllc.com/en/terminos.php"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tiendatexasllc.com/en/terminos.php"/>
     <lastmod>2026-09-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <!-- English (/en/) -->
+  <url>
+    <loc>https://tiendatexasllc.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tiendatexasllc.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tiendatexasllc.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tiendatexasllc.com/en/"/>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://tiendatexasllc.com/en/rampas.php</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tiendatexasllc.com/rampas.php"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tiendatexasllc.com/en/rampas.php"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tiendatexasllc.com/en/rampas.php"/>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tiendatexasllc.com/en/camas.php</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tiendatexasllc.com/camas.php"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tiendatexasllc.com/en/camas.php"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tiendatexasllc.com/en/camas.php"/>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tiendatexasllc.com/en/suplementos.php</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tiendatexasllc.com/suplementos.php"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tiendatexasllc.com/en/suplementos.php"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tiendatexasllc.com/en/suplementos.php"/>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tiendatexasllc.com/en/arnes.php</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tiendatexasllc.com/arnes.php"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tiendatexasllc.com/en/arnes.php"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tiendatexasllc.com/en/arnes.php"/>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tiendatexasllc.com/en/alfombras.php</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tiendatexasllc.com/alfombras.php"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tiendatexasllc.com/en/alfombras.php"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tiendatexasllc.com/en/alfombras.php"/>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tiendatexasllc.com/en/halloween.php</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tiendatexasllc.com/halloween.php"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tiendatexasllc.com/en/halloween.php"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tiendatexasllc.com/en/halloween.php"/>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tiendatexasllc.com/en/contacto.php</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tiendatexasllc.com/contacto.php"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tiendatexasllc.com/en/contacto.php"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tiendatexasllc.com/en/contacto.php"/>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://tiendatexasllc.com/en/privacidad.php</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tiendatexasllc.com/privacidad.php"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tiendatexasllc.com/en/privacidad.php"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tiendatexasllc.com/en/privacidad.php"/>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://tiendatexasllc.com/en/terminos.php</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tiendatexasllc.com/terminos.php"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tiendatexasllc.com/en/terminos.php"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tiendatexasllc.com/en/terminos.php"/>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

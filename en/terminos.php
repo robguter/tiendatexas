@@ -1,25 +1,24 @@
 <?php
-$meta_title = "Términos del Servicio - Tienda Texas";
-$meta_description = "Condiciones de uso aplicables al portal informativo Tienda Texas LLC y exención de responsabilidad sobre precios en Amazon.";
-$canonical = "https://tiendatexasllc.com/terminos.php";
-
-require_once 'header.php';
+    $meta_title = "Terms of Service - Tienda Texas";
+    $meta_description = "Terms of use for the Tienda Texas LLC informational site and disclaimer regarding prices on Amazon.";
+    $canonical = "https://tiendatexasllc.com/en/terminos.php";
+    require_once __DIR__ . '/../header.php';
 ?>
-
 <main class="contenedor-productos">
-    <h1>Términos del Servicio</h1>
-    
+    <h1>Terms of Service</h1>
     <div class="resena-texto" style="max-width: 750px; margin: 0 auto 50px auto; text-align: justify;">
-        <p><strong>Última actualización:</strong> Marzo 2026</p>
-
-        <p>Al acceder a Tienda Texas LLC, asumes que aceptas estos términos y condiciones en su totalidad. No continúes usando el sitio si no estás de acuerdo con todos los términos establecidos en esta página.</p>
-
-        <h3>1. Uso de Contenido Informativo</h3>
-        <p>Todo el contenido publicado en este portal se ofrece con fines meramente informativos y de entretenimiento. Aunque analizamos las especificaciones técnicas de camas, arneses y suplementos, Tienda Texas no sustituye el diagnóstico ni la asesoría de un médico veterinario titulado. Es responsabilidad del dueño consultar a un especialista antes de iniciar cualquier tratamiento articular o comprar herramientas de movilidad extrema.</p>
-
-        <h3>2. Exención de Responsabilidad sobre Precios de Amazon</h3>
-        <p>Los precios y la disponibilidad de los productos mostrados en nuestras guías provienen de muestreos manuales de Amazon en tiempo real. Tienda Texas LLC no tiene control sobre las ofertas temporales o cupones de los vendedores de Amazon. El precio real final válido siempre será el que se indique dentro del sitio web oficial de Amazon al momento de tramitar el pago de tu carrito.</p>
+        <p><strong>Last updated:</strong> March 2026</p>
+        <p>By accessing Tienda Texas LLC, you agree to accept these terms and conditions in their entirety. Do not
+            continue to use the site if you disagree with any of the terms set forth on this page.</p>
+        <h3>1. Use of Informational Content</h3>
+        <p>All content published on this site is provided for informational and entertainment purposes only. Although we
+            analyze the technical specifications of beds, harnesses, and supplements, Tienda Texas is not a substitute
+            for the diagnosis or advice of a licensed veterinarian. It is the owner's responsibility to consult a
+            specialist before starting any joint treatment or purchasing extreme mobility aids.</p>
+        <h3>2. Disclaimer Regarding Amazon Prices</h3>
+        <p>The prices and availability of the products shown in our guides come from manual, real-time sampling on
+            Amazon. Tienda Texas LLC has no control over temporary deals or coupons from Amazon sellers. The final valid
+            price will always be the one shown on Amazon's official website at the time you check out your cart.</p>
     </div>
 </main>
-
-<?php require_once 'footer.php'; ?>
+<?php require_once __DIR__ . '/../footer.php'; ?>
