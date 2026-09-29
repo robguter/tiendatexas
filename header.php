@@ -41,8 +41,12 @@ $json_name     = ($lang === 'en') ? "Tienda Texas - Buying guides for senior dog
                                   : "Tienda Texas - Guías de compra sobre cuidado de perros senior";
 $json_desc     = ($lang === 'en') ? "Honest buying guides for senior dog care: mobility ramps, orthopedic beds and joint supplements."
                                   : "Guías de compra sobre cuidado de perros senior: rampas, camas ortopédicas y suplementos articulares.";
-$main = ($lang === 'en') ? "/publicos/estilo/main.css" : "publicos/estilo/main.css";
-$styl = ($lang === 'en') ? "/publicos/estilo/estilo.css" : "publicos/estilo/estilo.css";
+$main = ($lang === 'en') ? "/publicos/estilo/main.css" 
+                         : "publicos/estilo/main.css";
+$styl = ($lang === 'en') ? "/publicos/estilo/estilo.css" 
+                         : "publicos/estilo/estilo.css";
+$logo = ($lang === 'en') ? "/publicos/images/logo.webp" 
+                         : "publicos/images/logo.webp";
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $lang; ?>">
@@ -67,11 +71,11 @@ $styl = ($lang === 'en') ? "/publicos/estilo/estilo.css" : "publicos/estilo/esti
   <meta property="og:url" content="<?php echo htmlspecialchars($canonical_out); ?>">
   <meta property="og:locale" content="<?php echo $og_locale; ?>">
 
-  <meta property="og:image" content="https://tiendatexasllc.com/publicos/images/logo.webp">
+  <meta property="og:image" content="<?php echo htmlspecialchars($logo); ?>">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="<?php echo htmlspecialchars($titulo_pagina); ?>">
   <meta name="twitter:description" content="<?php echo htmlspecialchars($desc_pagina); ?>">
-  <meta name="twitter:image" content="https://tiendatexasllc.com/publicos/images/logo.webp">
+  <meta name="twitter:image" content="<?php echo htmlspecialchars($logo); ?>">
   
   <link rel="icon" type="image/x-icon" href="https://tiendatexasllc.com/tiendatexas.ico">
   
@@ -123,7 +127,7 @@ $styl = ($lang === 'en') ? "/publicos/estilo/estilo.css" : "publicos/estilo/esti
     "@type": "Organization",
     "name": "Tienda Texas - Guías de compra sobre cuidado de perros senior",
     "url": "https://tiendatexasllc.com/",
-    "logo": "https://tiendatexasllc.com/publicos/images/logo.webp",
+    "logo": "<?php echo htmlspecialchars($logo); ?>",
     "description": "Guías de compra sobre cuidado de perros senior: rampas, camas ortopédicas y suplementos articulares.",
     "sameAs": [
       "https://www.facebook.com/tiendatexasllc",
