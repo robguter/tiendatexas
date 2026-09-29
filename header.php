@@ -41,6 +41,8 @@ $json_name     = ($lang === 'en') ? "Tienda Texas - Buying guides for senior dog
                                   : "Tienda Texas - Guías de compra sobre cuidado de perros senior";
 $json_desc     = ($lang === 'en') ? "Honest buying guides for senior dog care: mobility ramps, orthopedic beds and joint supplements."
                                   : "Guías de compra sobre cuidado de perros senior: rampas, camas ortopédicas y suplementos articulares.";
+$main = ($lang === 'en') ? "/publicos/estilo/main.css" : "publicos/estilo/main.css";
+$styl = ($lang === 'en') ? "/publicos/estilo/estilo.css" : "publicos/estilo/estilo.css";
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $lang; ?>">
