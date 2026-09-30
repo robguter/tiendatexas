@@ -121,7 +121,7 @@
 				"name": <?php echo json_encode($json_name, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,
 				"url": "https://tiendatexasllc.com/",
 				"logo": "<?php echo htmlspecialchars($logo); ?>",
-				"description": <?php echo json_encode($json_desc, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>
+				"description": <?php echo json_encode($json_desc, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,
 				"sameAs": [
 				"https://www.facebook.com/tiendatexasllc",
 				"https://www.instagram.com/tiendatexasllc"
