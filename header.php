@@ -108,20 +108,20 @@
 			{
 				"@context": "https://schema.org",
 				"@type": "WebSite",
-				"name": <?php echo $json_name; ?>,
+				"name": <?php echo json_encode($json_name, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,
 				"@id": "https://tiendatexasllc.com/",
 				"url": "https://tiendatexasllc.com/",
-				"description": <?php echo $json_desc; ?>
+				"description": <?php echo json_encode($json_desc, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>
 			}
 			</script>
 			<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
 				"@type": "Organization",
-				"name": "Tienda Texas - Guías de compra sobre cuidado de perros senior",
+				"name": <?php echo json_encode($json_name, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,
 				"url": "https://tiendatexasllc.com/",
 				"logo": "<?php echo htmlspecialchars($logo); ?>",
-				"description": "Guías de compra sobre cuidado de perros senior: rampas, camas ortopédicas y suplementos articulares.",
+				"description": <?php echo json_encode($json_desc, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>
 				"sameAs": [
 				"https://www.facebook.com/tiendatexasllc",
 				"https://www.instagram.com/tiendatexasllc"
