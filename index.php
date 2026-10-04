@@ -177,7 +177,7 @@
           </div>
         </div>
         <div class="timeline-card" style="background:#fff; padding:0; overflow:hidden;">
-          <img src="https://images.unsplash.com/photo-1608469926865-b2d2200bb2f6?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Perro senior descansando en casa" style="width:100%; height:180px; object-fit:cover; display:block;">
+          <img src="publicos/images/inicio/inicio_p1.webp" alt="Perro senior descansando en casa" style="width:100%; height:180px; object-fit:cover; display:block;">
           <div style="padding:26px 24px;">
             <span class="tag">Señales de que tu perro ya es senior</span>
             <ul style="margin:14px 0 0; padding-left:18px; color:rgba(30,42,56,0.75); font-size:0.94rem; line-height:1.9;">
