@@ -78,10 +78,10 @@
             <?php else: ?>
 
             <?php foreach ($productos_filtrados as $indice => $prod): $enlace_afiliado = obtener_enlace_amazon($prod['asin']);
-// Use the first image in the list as the default initial photo
-$foto_inicial = !empty($prod['imagenes']) ? $prod['imagenes'][0] : '/publicos/images/halloween/halloween_p1.webp';
-$id_visor_unico = "visor-" . $indice;
-?>
+                // Use the first image in the list as the default initial photo
+                $foto_inicial = !empty($prod['imagenes']) ? $prod['imagenes'][0] : '/publicos/images/halloween/halloween_p1.webp';
+                $id_visor_unico = "visor-" . $indice;
+            ?>
             <!-- MODERN PRODUCT CARD -->
             <article class="producto-card">
                 <!-- AMAZON-STYLE GALLERY -->
@@ -158,6 +158,12 @@ $id_visor_unico = "visor-" . $indice;
             <?php endif; ?>
         </main>
         <script src="/publicos/js/galeria.js"></script>
+
+        <section style="margin: 30px 0; padding: 25px; background: var(--papel-2); border-radius: 12px; border: 1px solid var(--gris-borde); text-align: center;">
+            <h2 style="margin-top: 0;">🛍️ Shop our store</h2>
+            <p style="color: var(--ink-mutado);">All 4 products from this guide, gathered in one place:</p>
+            <a href="https://shop.tiendatexasllc.com/collections/halloween" class="btn-ver-amazon" style="max-width: 420px; margin: 0 auto;">See the 4 products in our store →</a>
+        </section>
 
         <h2>Costumes for senior dogs: comfort comes first</h2>
 
