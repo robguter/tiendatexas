@@ -141,7 +141,7 @@
         <section style="margin: 30px 0; padding: 25px; background: var(--papel-2); border-radius: 12px; border: 1px solid var(--gris-borde); text-align: center;">
             <h2 style="margin-top: 0;">🛍️ Compra en nuestra tienda</h2>
             <p style="color: var(--ink-mutado);">Los 4 productos de esta guía, reunidos en un solo lugar:</p>
-            <a href="https://shop.tiendatexasllc.com/collections/halloween" class="btn-ver-amazon" style="max-width: 420px; margin: 0 auto;">Ver los 4 productos en nuestra tienda →</a>
+            <a href="https://shop.tiendatexasllc.com/es/collections/halloween" class="btn-ver-amazon" style="max-width: 420px; margin: 0 auto;">Ver los 4 productos en nuestra tienda →</a>
         </section>
 
     <h2>Disfraces para perros senior: la comodidad va primero</h2>
