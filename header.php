@@ -73,6 +73,7 @@
 			<meta name="twitter:title" content="<?php echo htmlspecialchars($titulo_pagina); ?>">
 			<meta name="twitter:description" content="<?php echo htmlspecialchars($desc_pagina); ?>">
 			<meta name="twitter:image" content="<?php echo htmlspecialchars($logo); ?>">
+			<meta name="p:domain_verify" content="c422ada600b6c91cb034ea0df5060039"/>
 			
 			<link rel="icon" type="image/x-icon" href="https://tiendatexasllc.com/tiendatexas.ico">
 			
