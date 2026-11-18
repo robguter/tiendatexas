@@ -42,8 +42,8 @@
 							 : "publicos/estilo/estilo.css";
 	$logo = ($lang === 'en') ? "/publicos/images/logo.webp" 
 							 : "publicos/images/logo.webp";
-	$titl = ($lang === 'en') ? 'Senior Dogs' 
-							 : 'Perros Senior';
+	$titl = ($lang === 'en') ? 'From puppy to senior' 
+							 : 'De cachorro a senior';
 	?>
 	<!DOCTYPE html>
 	<html lang="<?php echo $lang; ?>">
@@ -164,6 +164,7 @@
 							</div>
 						</div>
 						<a href="<?php echo $pref; ?>/index.php#por-que"><?php echo $en ? 'Why senior' : 'Por qué senior'; ?></a>
+						<a class="nav-tienda" href="https://shop.tiendatexasllc.com" target="_blank" rel="noopener">🛒 <?php echo $en ? 'Store' : 'Tienda'; ?></a>
 						<a href="<?php echo $pref; ?>/index.php#newsletter"><?php echo $en ? 'Newsletter' : 'Boletín'; ?></a>
 						<div class="lang-switch">
 							<a href="<?php echo htmlspecialchars($url_es); ?>" onclick="document.cookie='tt_lang=es;path=/;max-age=31536000'">ES</a>

@@ -4,7 +4,10 @@ RewriteEngine On
 RewriteRule ^index\.html$ /index.php [R=301,L]
 
 # Forzar HTTPS y eliminar el www en una sola regla
+# (localhost, 127.0.0.1 y sisterag quedan fuera: así la prueba en local no te manda a la web en vivo)
 RewriteCond %{HTTP_HOST} !^localhost [NC]
+RewriteCond %{HTTP_HOST} !^127\.0\.0\.1 [NC]
+RewriteCond %{HTTP_HOST} !sisterag [NC]
 RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} ^www\.tiendatexasllc\.com [NC]
 RewriteRule ^(.*)$ https://tiendatexasllc.com/$1 [R=301,L]

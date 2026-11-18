@@ -1,6 +1,6 @@
 <?php
-  $meta_title = "Tienda Texas — Guías Especializadas para Perros Senior";
-  $meta_description = "Comparativas honestas de productos para perros mayores. Analizamos las mejores rampas de movilidad, camas ortopédicas y suplementos avalados por veterinarios.";
+  $meta_title = "Tienda Texas — Perros de todas las edades, de cachorro a senior";
+  $meta_description = "Tienda para perros de todas las edades, de cachorro a senior: coche plegable, árbol para gatos, jaula para loros, tapete para lamer y juguetes, además de guías de compra honestas sobre rampas, camas ortopédicas y suplementos.";
   $canonical = "https://tiendatexasllc.com";
 
   // --- Suscripción al boletín: guarda el correo y avisa al administrador ---
@@ -42,34 +42,40 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <span class="eyebrow">Cuidado Avanzado de Perros Mayores</span>
-          <h1>Que los años se noten <em>menos</em> en sus patas y articulaciones.</h1>
-          <p class="lead">Bienvenido a <strong>Tienda Texas</strong>. Creamos guías de compra honestas y análisis detallados para dueños de perros senior. Evaluamos colchones ortopédicos de alta densidad, suplementos articulares efectivos, arneses de elevación y rampas de movilidad para que la vejez de tu compañero sea digna, cómoda y segura.</p>
+          <span class="eyebrow">Tienda Texas — De cachorro a senior</span>
+          <h1>Todo para que tu perro viva <em>cómodo</em>, de cachorro a senior.</h1>
+          <p class="lead">Productos que sí valen la pena y guías honestas para cuidarlo: coche plegable, árbol para gatos, jaula para loros, tapete para lamer y más. Compra directa en nuestra tienda, sin vueltas.</p>
           <div class="cta-row">
-            <a href="#guias" class="btn btn-primary">Ver guías de compra</a>
-            <a href="#por-que" class="btn btn-ghost">¿Por qué confiar en nosotros?</a>
+            <a href="https://shop.tiendatexasllc.com" target="_blank" rel="noopener" class="btn btn-primary">🛒 Ver la tienda</a>
+            <a href="#guias" class="btn btn-ghost">Ver guías de compra</a>
           </div>
         </div>
-        
-        <!-- Cronología de Edad Senior -->
-        <div class="timeline-card">
-          <span class="tag">¿Cuándo se considera senior a un perro?</span>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="age">Razas Pequeñas (Hasta 10 kg)</div>
-              <div class="note">Etapa senior a partir de los 10 u 11 años.</div>
-            </div>
-            <div class="timeline-item">
-              <div class="age">Razas Medianas (11 a 25 kg)</div>
-              <div class="note">Etapa senior a partir de los 8 o 9 años.</div>
-            </div>
-            <div class="timeline-item">
-              <div class="age">Razas Grandes y Gigantes (Más de 26 kg)</div>
-              <div class="note">Etapa senior a partir de los 6 o 7 años.</div>
-            </div>
+
+        <div class="hero-imagen-box">
+          <img src="publicos/images/inicio/hero_perro.webp" alt="Perro golden retriever sonriendo en el pasto">
+          <span class="foto-credito">Foto: Vetman212, CC BY-SA 4.0</span>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="senior-strip">
+      <div class="wrap">
+        <span class="tag">¿Cuándo se considera senior a un perro?</span>
+        <div class="senior-ages">
+          <div class="senior-age">
+            <div class="age">Razas Pequeñas (Hasta 10 kg)</div>
+            <div class="note">Etapa senior a partir de los 10 u 11 años.</div>
+          </div>
+          <div class="senior-age">
+            <div class="age">Razas Medianas (11 a 25 kg)</div>
+            <div class="note">Etapa senior a partir de los 8 o 9 años.</div>
+          </div>
+          <div class="senior-age">
+            <div class="age">Razas Grandes y Gigantes (Más de 26 kg)</div>
+            <div class="note">Etapa senior a partir de los 6 o 7 años.</div>
           </div>
         </div>
-        
       </div>
     </section>
 
@@ -80,6 +86,82 @@
         <span>🔄 Catálogo actualizado con rangos de precios reales en 2026</span>
       </div>
     </div>
+
+    <section class="section" id="tienda">
+      <div class="wrap">
+        <div class="section-head">
+            <h2>Productos destacados</h2>
+            <p>Venta directa desde nuestra tienda: los despacha el proveedor en EE. UU.</p>
+        </div>
+        <div class="product-grid">
+
+          <div class="product-card">
+            <div class="product-thumb">
+              <img src="https://cdn.shopify.com/s/files/1/0787/8285/7394/files/619373ea-07c0-4662-aa1e-7b89384c5899.jpg?v=1793645618" alt="Coche plegable para perros hasta 44 lb">
+            </div>
+            <div class="body">
+              <span class="kicker">Venta directa</span>
+              <h3>Coche Plegable para Perros hasta 44 lb — 4 Ruedas y Asa Reversible</h3>
+              <div class="product-price">$99.99</div>
+              <a href="https://shop.tiendatexasllc.com/products/coche-plegable-para-perros-hasta-44-lb-4-ruedas-y-asa-reversible" target="_blank" rel="noopener" class="btn btn-primary product-btn">Ver en la tienda →</a>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-thumb">
+              <img src="https://cdn.shopify.com/s/files/1/0787/8285/7394/files/65dc4ef1-3b56-4e00-81cb-5c5e00beb738.webp?v=1793886848" alt="Árbol grande para gatos de 162 cm, gris claro">
+            </div>
+            <div class="body">
+              <span class="kicker">Venta directa</span>
+              <h3>Árbol Grande para Gatos — 162 cm, Gris Claro</h3>
+              <div class="product-price">$79.89</div>
+              <a href="https://shop.tiendatexasllc.com/products/arbol-grande-para-gatos-162-cm-gris-claro" target="_blank" rel="noopener" class="btn btn-primary product-btn">Ver en la tienda →</a>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-thumb">
+              <img src="https://cdn.shopify.com/s/files/1/0787/8285/7394/files/S049e633e8803434184e18c04332be0cdG.webp?v=1794490756" alt="Jaula grande para loros de 64 pulgadas con parque superior">
+            </div>
+            <div class="body">
+              <span class="kicker">Venta directa</span>
+              <h3>Jaula Grande para Loros 64" con Parque Superior</h3>
+              <div class="product-price">$79.99</div>
+              <a href="https://shop.tiendatexasllc.com/products/64-h-large-bird-cage-with-top-playground-rolling-storage-stands-metal-bird-cage-for-parrots-cockatiels-budgies" target="_blank" rel="noopener" class="btn btn-primary product-btn">Ver en la tienda →</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="product-grid-a">
+
+          <div class="product-card">
+            <div class="product-thumb">
+              <img src="https://cdn.shopify.com/s/files/1/0787/8285/7394/files/Sd193d09d83fc41c28f1e82bee725cfe6D.avif?v=1791376776" alt="Tapete de silicona para lamer">
+            </div>
+            <div class="body">
+              <span class="kicker">Venta directa</span>
+              <h3>Tapete de Silicona para Lamer — Calma diaria</h3>
+              <div class="product-price">$19.99</div>
+              <a href="https://shop.tiendatexasllc.com/products/alfombrilla-para-lamer-de-acero-inoxidable-lick-mat" target="_blank" rel="noopener" class="btn btn-primary product-btn">Ver en la tienda →</a>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-thumb">
+              <img src="https://cdn.shopify.com/s/files/1/0787/8285/7394/files/Capturadepantalla2026-10-29090729.png?v=1793279581" alt="Pez eléctrico que se mueve solo para gatos, 30 cm">
+            </div>
+            <div class="body">
+              <span class="kicker">Venta directa</span>
+              <h3>Pez Eléctrico que se Mueve Solo para Gatos — 30 cm, USB</h3>
+              <div class="product-price">$16.99</div>
+              <a href="https://shop.tiendatexasllc.com/products/pez-electrico-que-se-mueve-solo-para-gatos-30-cm-recargable-usb" target="_blank" rel="noopener" class="btn btn-primary product-btn">Ver en la tienda →</a>
+            </div>
+          </div>
+
+        </div>
+        <p class="tienda-mas"><a href="https://shop.tiendatexasllc.com" target="_blank" rel="noopener">Ver toda la tienda →</a></p>
+      </div>
+    </section>
 
     <section class="section" id="guias">
       <div class="wrap">
