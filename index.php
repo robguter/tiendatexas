@@ -252,7 +252,7 @@
         <div>
           <h2>No somos otro blog genérico de mascotas</h2>
           <p style="margin-top:16px; color:rgba(30,42,56,0.75); max-width:48ch;">
-            Nos enfocamos solo en perros senior porque sus necesidades son distintas: movilidad reducida, articulaciones sensibles, cambios de apetito. Cada recomendación parte de eso, no de "los 10 productos más vendidos para perros" sin contexto.
+            Nos enfocamos en perros de todas las edades, de cachorro a senior, porque sus necesidades cambian con la edad: movilidad reducida, articulaciones sensibles, cambios de apetito. Cada recomendación parte de eso, no de "los 10 productos más vendidos para perros" sin contexto.
           </p>
           <div class="stat-row">
             <div class="stat"><span>Como dueños de perros senior, entendemos de primera mano los cambios que trae la edad, productos probados y comparados</span></div>
