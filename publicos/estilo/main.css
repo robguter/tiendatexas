@@ -3,8 +3,8 @@
 :root {
     --ink: #26313d;
     --ink-mutado: rgba(38,49,61,.66);
-    --papel: #A8B7BF;
-    --papel-2: #B8C7CC;
+    --papel: #d7dee3;
+    --papel-2: #c6d0d6;
     --tarjeta: #F6FCFF;
     --nogal: #3a4a5c;
     --nogal-hover: #4a5a6c;
@@ -21,7 +21,7 @@
     --profundo-1: #2e3d4eEF;
     --profundo: #2e3d4eDF;
     --profundo-2: #232f3d;
-    --mist: #f6f4ee;
+    --mist: #eef2f5;
 }
 
 *,*::before,*::after{ box-sizing:border-box; }
@@ -53,7 +53,7 @@ a{ color:inherit; }
    ========================================================================== */
 header {
     background: var(--profundo-1);
-    border-bottom: 1px solid rgba(246,244,238,.1);
+    border-bottom: 1px solid rgba(238,242,245,.1);
     padding: 15px 0;
     position: sticky;
     top: 0;
@@ -92,7 +92,7 @@ header {
 .hero {
     padding: 40px 0 28px;
     background: linear-gradient(180deg, var(--profundo) 0%, var(--profundo-2) 100%);
-    border-bottom: 1px solid rgba(246,244,238,.1);
+    border-bottom: 1px solid rgba(238,242,245,.1);
 }
 .hero-grid { display:grid; grid-template-columns: 1.2fr .8fr; gap: 48px; align-items:center; }
 
@@ -101,7 +101,7 @@ header {
 .hero h1 { font-size: 2.7rem; line-height:1.15; color: var(--mist); font-weight:600; margin:0 0 20px; max-width:16ch; }
 .hero h1 em { font-style:italic; font-weight:400; color:var(--ocre-claro); }
 
-.lead { font-size:1.08rem; color: rgba(246,244,238,.82); margin-bottom:30px; max-width:56ch; }
+.lead { font-size:1.08rem; color: rgba(238,242,245,.82); margin-bottom:30px; max-width:56ch; }
 
 .cta-row { display:flex; gap:16px; flex-wrap:wrap; }
 .btn { display:inline-block; padding:14px 28px; border-radius:8px; text-decoration:none; font-weight:600; font-size:.95rem; transition:background-color .2s ease, transform .15s ease; }
@@ -112,8 +112,8 @@ header {
 
 .hero .btn-primary { background-color: var(--cta); color: #fff; }
 .hero .btn-primary:hover { background-color: var(--cta-hover); color:#fff; }
-.hero .btn-ghost { color: var(--mist); border-color: rgba(246,244,238,.5); }
-.hero .btn-ghost:hover { background-color: rgba(246,244,238,.1); }
+.hero .btn-ghost { color: var(--mist); border-color: rgba(238,242,245,.5); }
+.hero .btn-ghost:hover { background-color: rgba(238,242,245,.1); }
 
 /* Tarjeta de referencia (cronología de edad senior) */
 .timeline-card {
@@ -179,7 +179,7 @@ header {
 .tienda-mas a:hover { color: var(--cta); }
 
 /* Banda de confianza */
-.trust { background: var(--nogal-suave); color: var(--ink); padding:12px 0; font-size:.85rem; font-weight:500; }
+.trust { background: #A8B7BF; color: var(--ink); padding:12px 0; font-size:.85rem; font-weight:500; }
 .trust .wrap { display:flex; justify-content:space-between; flex-wrap:wrap; gap:15px; }
 
 /* ==========================================================================

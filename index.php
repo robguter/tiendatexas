@@ -247,11 +247,11 @@
       </div>
     </section>
 
-    <section class="section" id="por-que" style="background:var(--cream-2);">
+    <section class="section" id="por-que">
       <div class="wrap split">
         <div>
           <h2>No somos otro blog genérico de mascotas</h2>
-          <p style="margin-top:16px; color:rgba(30,42,56,0.75); max-width:48ch;">
+          <p style="margin-top:16px; max-width:48ch;">
             Nos enfocamos en perros de todas las edades, de cachorro a senior, porque sus necesidades cambian con la edad: movilidad reducida, articulaciones sensibles, cambios de apetito. Cada recomendación parte de eso, no de "los 10 productos más vendidos para perros" sin contexto.
           </p>
           <div class="stat-row">
